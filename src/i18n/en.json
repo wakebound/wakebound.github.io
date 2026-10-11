@@ -16,12 +16,12 @@
   "run.1.title": "Portals open on their own.",
   "run.1.body": "The board in your channel fills through the day, ranked E and up. Pick one and press Enter. You go in alone.",
   "run.2.title": "Enemies warn you.",
-  "run.2.body": "A caster's power builds every turn. A brute winds up a heavy blow. Defend at the right moment and it barely lands.",
-  "run.2.system": "Hollow Acolyte's power keeps building.",
+  "run.2.body": "A brute winds up a heavy blow and the game tells you before it lands. Press Defend in that turn and it blocks all of it.",
+  "run.2.system": "⚠️ Heavy blow incoming. Defend blocks all of it.",
   "run.3.title": "Deeper pays more.",
   "run.3.body": "After the first rooms, every cleared room asks the same question. Go deeper for bigger rewards, or leave with what you have.",
-  "run.4.title": "The boss falls. Something drops.",
-  "run.4.body": "Beat the last room for a chance at an item made for your class. Fall, and you lose what the run gave you.",
+  "run.4.title": "The boss falls. The run pays out.",
+  "run.4.body": "Beat the last room and the portal is cleared: XP, gold and Forge ore, and sometimes an item made for your class. Fall, and you lose what the run gave you.",
   "classes.system": "Choose your class. This cannot be changed later.",
   "classes.group": "Classes",
   "classes.skill": "Skill",
@@ -101,5 +101,10 @@
   "alt.rarity.common": "Common",
   "alt.rarity.uncommon": "Uncommon",
   "alt.rarity.rare": "Rare",
-  "alt.rarity.epic": "Epic"
+  "alt.rarity.epic": "Epic",
+  "alt.shot.board": "The portal board in Discord: three open portals ranked D, C and E, a raid line, and Enter 1, Enter 2 and Enter 3 buttons.",
+  "alt.shot.warning": "A combat room in Discord: Bramble Boar winds up a heavy blow. The message says Heavy blow incoming, Defend blocks all of it, and the Defend button carries a warning sign.",
+  "alt.shot.choice": "After room 3 of 5 the bot offers two buttons: Go deeper, or Leave with the loot.",
+  "alt.shot.cleared": "The Portal cleared message in Discord, listing the XP, gold and Forge ore the run paid out.",
+  "alt.shot.raid": "A raid card in Discord with the boss health bar, the active levers and the Attack and Class lever buttons."
 }

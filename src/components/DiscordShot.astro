@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import type { Locale } from '../i18n/t.ts';
+
+interface Props { locale: Locale; name: 'board' | 'warning' | 'choice' | 'cleared' | 'raid'; alt: string }
+const { locale, name, alt } = Astro.props;
+const shots = import.meta.glob<{ default: ImageMetadata }>('../assets/shots/*/*.png', { eager: true });
+const shot = shots[`../assets/shots/${locale}/${name}.png`];
+if (!shot) throw new Error(`missing Discord shot ${locale}/${name}`);
+---
+<Image src={shot.default} alt={alt} width={1000} format="webp" class="discord-shot" />
+
+<style>
+  .discord-shot{width:100%;height:auto;border-radius:8px;border:1px solid #1e1f22;box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
+</style>

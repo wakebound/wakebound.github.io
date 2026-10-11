@@ -16,12 +16,12 @@
   "run.1.title": "Os portais se abrem sozinhos.",
   "run.1.body": "O quadro no seu canal vai enchendo ao longo do dia, do rank E para cima. Escolha um e aperte Entrar. Você entra sozinho.",
   "run.2.title": "Os inimigos avisam.",
-  "run.2.body": "O poder do conjurador cresce a cada turno. O brutamontes arma um golpe pesado. Defenda na hora certa e quase não pega.",
-  "run.2.system": "O poder do Acólito Oco não para de crescer.",
+  "run.2.body": "O brutamontes arma um golpe pesado e o jogo avisa antes de acertar. Aperte Defender nesse turno e ele bloqueia tudo.",
+  "run.2.system": "⚠️ Golpe pesado vindo. Defender bloqueia tudo.",
   "run.3.title": "Mais fundo paga mais.",
   "run.3.body": "Depois das primeiras salas, cada sala limpa faz a mesma pergunta. Descer mais fundo por recompensas maiores, ou sair com o que já ganhou.",
-  "run.4.title": "O chefe cai. Algo fica no chão.",
-  "run.4.body": "Vença a última sala e tenha a chance de um item feito para a sua classe. Se cair, perde o que a incursão te deu.",
+  "run.4.title": "O chefe cai. A incursão paga.",
+  "run.4.body": "Vença a última sala e o portal é limpo: XP, ouro e minério da Forja, e às vezes um item feito para a sua classe. Se cair, perde o que a incursão te deu.",
   "classes.system": "Escolha sua classe. Ela não pode ser trocada depois.",
   "classes.group": "Classes",
   "classes.skill": "Habilidade",
@@ -101,5 +101,10 @@
   "alt.rarity.common": "Comum",
   "alt.rarity.uncommon": "Incomum",
   "alt.rarity.rare": "Raro",
-  "alt.rarity.epic": "Épico"
+  "alt.rarity.epic": "Épico",
+  "alt.shot.board": "O quadro de portais no Discord: três portais abertos de rank D, C e E, uma linha de incursão cooperativa e os botões Entrar 1, Entrar 2 e Entrar 3.",
+  "alt.shot.warning": "Uma sala de combate no Discord: o Cavaleiro de Estilhaços arma um golpe pesado. A mensagem diz Golpe pesado vindo, Defender bloqueia tudo, e o botão Defender tem um sinal de alerta.",
+  "alt.shot.choice": "Depois da sala 3 de 5 o bot oferece dois botões: Descer mais fundo, ou Sair com o espólio.",
+  "alt.shot.cleared": "A mensagem de portal concluído no Discord, com o XP, o ouro e o minério da Forja que a incursão pagou.",
+  "alt.shot.raid": "Um cartão de incursão no Discord com a barra de vida do chefe, as alavancas ativas e os botões Atacar e Alavanca de classe."
 }

@@ -3,6 +3,7 @@ import type { Locale } from '../i18n/t.ts';
 import TopBar from './TopBar.astro';
 import Hero from './Hero.astro';
 import RankDivider from './RankDivider.astro';
+import RunScroll from './RunScroll.astro';
 import ClassPicker from './ClassPicker.astro';
 import RaidBand from './RaidBand.astro';
 import WorldBento from './WorldBento.astro';
@@ -16,6 +17,7 @@ const { locale } = Astro.props;
 <main>
   <Hero locale={locale} />
   <RankDivider />
+  <RunScroll locale={locale} />
   <ClassPicker locale={locale} />
   <RaidBand locale={locale} />
   <WorldBento locale={locale} />
