@@ -1,5 +1,5 @@
 import { defineCollection } from 'astro:content';
-import { file } from 'astro/loaders';
+import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const byLocale = (text: string): Record<string, unknown>[] =>
@@ -16,4 +16,9 @@ const items = defineCollection({
   schema: z.object({ locale: z.enum(['en', 'pt-br']), slot: z.enum(['weapon', 'armor', 'accessory']), name: z.string(), description: z.string(), image: z.string() }),
 });
 
-export const collections = { portals, items };
+const legal = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/legal' }),
+  schema: z.object({ title: z.string(), updated: z.string() }),
+});
+
+export const collections = { portals, items, legal };

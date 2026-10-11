@@ -9,11 +9,11 @@ import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/600.css';
 import '../styles/tokens.css';
 
-interface Props { locale: 'en' | 'pt-br'; title: string; description: string; path: string }
-const { locale, title, description, path } = Astro.props;
+interface Props { locale: 'en' | 'pt-br'; title: string; description: string; path: string; ptPath?: string }
+const { locale, title, description, path, ptPath = `/pt-br${path}` } = Astro.props;
 const base = 'https://wakebound.github.io';
 const en = new URL(path, base).href;
-const ptBr = new URL(`/pt-br${path}`, base).href;
+const ptBr = new URL(ptPath, base).href;
 ---
 <html lang={locale === 'en' ? 'en' : 'pt-BR'}>
   <head>

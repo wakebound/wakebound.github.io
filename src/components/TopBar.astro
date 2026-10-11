@@ -1,18 +1,19 @@
 ---
 import { t, type Locale } from '../i18n/t.ts';
 
-interface Props { locale: Locale }
-const { locale } = Astro.props;
+interface Props { locale: Locale; paths?: { en: string; ptBr: string } }
+const { locale, paths = { en: '/', ptBr: '/pt-br/' } } = Astro.props;
+const home = locale === 'en' ? '/' : '/pt-br/';
 ---
 <div class="top"><div class="wrap"><div class="bar">
   <div class="mark">Wakebound</div>
   <nav aria-label={t(locale, 'nav.main')}>
-    <a class="hide-sm" href="#run">{t(locale, 'nav.howItPlays')}</a>
-    <a class="hide-sm" href="#classes">{t(locale, 'nav.classes')}</a>
-    <a class="hide-sm" href="#world">{t(locale, 'nav.world')}</a>
+    <a class="hide-sm" href={`${home}#run`}>{t(locale, 'nav.howItPlays')}</a>
+    <a class="hide-sm" href={`${home}#classes`}>{t(locale, 'nav.classes')}</a>
+    <a class="hide-sm" href={`${home}#world`}>{t(locale, 'nav.world')}</a>
     <span class="lang">
-      <a href="/" lang="en" aria-current={locale === 'en' ? 'true' : undefined}>{t(locale, 'lang.en')}</a>
-      <a href="/pt-br/" lang="pt-BR" aria-current={locale === 'pt-br' ? 'true' : undefined}>{t(locale, 'lang.ptBr')}</a>
+      <a href={paths.en} lang="en" aria-current={locale === 'en' ? 'true' : undefined}>{t(locale, 'lang.en')}</a>
+      <a href={paths.ptBr} lang="pt-BR" aria-current={locale === 'pt-br' ? 'true' : undefined}>{t(locale, 'lang.ptBr')}</a>
     </span>
   </nav>
 </div></div></div>

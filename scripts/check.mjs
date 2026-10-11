@@ -1,7 +1,7 @@
 import { chromium } from '@playwright/test';
 import { preview } from 'astro';
 
-const PAGES = ['/', '/pt-br/'];
+const PAGES = ['/', '/pt-br/', '/privacy/', '/terms/', '/pt-br/privacidade/', '/pt-br/termos/'];
 const origin = 'http://localhost:4329';
 
 async function waitForServer() {

@@ -1,0 +1,27 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import { t, type Locale } from '../i18n/t.ts';
+
+interface Props { entry: CollectionEntry<'legal'>; locale: Locale }
+const { entry, locale } = Astro.props;
+const { Content } = await render(entry);
+---
+<main class="prose">
+  <h1>{entry.data.title}</h1>
+  <p class="updated">{t(locale, 'legal.updated', { date: entry.data.updated })}</p>
+  <Content />
+</main>
+
+<style>
+  .prose{max-width:65ch;margin:0 auto;padding:110px 16px 72px}
+  h1{font:800 clamp(34px,6vw,52px)/1.1 var(--display);margin-bottom:8px}
+  .updated{color:var(--ash);font-size:16px;margin-bottom:28px}
+  .prose :global(h2){font:700 28px/1.2 var(--display);margin:36px 0 10px}
+  .prose :global(p),.prose :global(ul),.prose :global(table){margin-bottom:14px}
+  .prose :global(ul){padding-left:22px}
+  .prose :global(li){margin-bottom:6px}
+  .prose :global(a){color:var(--ice)}
+  .prose :global(code){font:600 16px var(--sys);background:var(--crypt);padding:1px 5px}
+  .prose :global(table){border-collapse:collapse;width:100%;font-size:17px}
+  .prose :global(th),.prose :global(td){border:1px solid var(--edge);padding:6px 10px;text-align:left;vertical-align:top}
+</style>
