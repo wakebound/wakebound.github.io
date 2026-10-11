@@ -9,7 +9,7 @@ Wakebound is a Discord bot: a text-and-buttons game you play inside your server.
 
 TODO(owner): legal name of the person or company that runs Wakebound (the "controller" under the LGPD).
 
-Contact: the [support server](https://discord.gg/FdBgeCAYnz) or TODO(owner): contact email.
+Contact: the [support server](https://discord.gg/FdBgeCAYnz) or by email at tavinq@hotmail.com.
 
 ## What the bot stores
 
@@ -24,7 +24,7 @@ Everything below is stored in a SQLite database, per server.
 **About each player, per server**
 - Your Discord user id, which is the only thing that ties the data to you.
 - Your hunter: class, level, XP, gold, potions, energy, HP, talents, title, injuries and other timers, which tips you have seen, whether the tutorial is done, and whether your profile is private.
-- Your game activity: items, materials, expeditions, titles earned, runs and the state they are in, raid actions, Forge donations and Contract deliveries, and when each happened (start, end and donation times).
+- Your game activity: items, materials, expeditions, titles earned, runs and the state they are in, raid actions, Forge donations and Contract deliveries, and when each happened (for example start, end, earn and donation times).
 - Feedback: a rating (fun, meh or unfair) with the run it was about, and, if you use the Feedback button, the text you wrote.
 
 **Why:** to run the game. Without this data there is no hunter, no progress and no raid.
@@ -35,7 +35,7 @@ Everything below is stored in a SQLite database, per server.
 - **Error reports.** When the bot hits an error, it can send the error and a short context message to an error-tracking service. Request data is removed, the bot's own secrets are scrubbed, and hunters appear only as the hash code. A report can still contain a server or channel id.
 - **Uptime monitor.** The bot pings an uptime monitor once a minute. The ping carries no player data.
 
-TODO(owner): how long the container logs and the error-tracking service keep their data.
+The bot's container logs rotate on the server (about 30 MB, the oldest lines dropped) and are copied to the operator's own log server in Brazil, where they are kept for 30 days. The game event lines there carry the server id and the hashed hunter code. Error reports go to a Bugsink error tracker run by the operator on their own server in Brazil, and are deleted after 90 days.
 
 ## How long it is kept
 
@@ -43,10 +43,12 @@ TODO(owner): how long the container logs and the error-tracking service keep the
 | --- | --- |
 | Feedback text | Deleted 30 days after it was written |
 | Everything else about a server | Until the server resets or deletes it, or removes the bot and 30 days pass |
-| Database backup | One snapshot, rewritten every 6 hours, so a deletion leaves it within the next snapshot |
-| Logs and error reports | TODO(owner): see above |
+| Database snapshot on the server | One file, rewritten every 6 hours |
+| Backup copies | Up to about 6 months (7 daily, 4 weekly and 6 monthly copies), then they expire |
+| Container logs | About 30 MB on the server, then 30 days on the operator's log server |
+| Error reports | Deleted after 90 days |
 
-TODO(owner): any copy of the server or its backups kept outside the bot's own snapshot (host-level or off-site backups), and for how long.
+**Backups.** Once a day the bot's snapshot is copied to the operator's own backup server in Brazil, in an encrypted restic repository, which keeps 7 daily, 4 weekly and 6 monthly copies. This means data you delete from the game can stay in those backups for up to about 6 months, until the copies expire. Backups are used only to restore the service after a failure; they are not read for anything else. TODO(owner): whether a second copy of the backups also goes to Backblaze B2 cloud storage, and in which region.
 
 Ratings are not feedback text: they stay with the rest of your server's data until it is deleted.
 
@@ -54,13 +56,15 @@ Ratings are not feedback text: they stay with the rest of your server's data unt
 
 - **A server admin** can open `/config`, then Data. **Reset progress** removes every hunter, item, run, portal, raid, the Forge and the Contracts, and keeps the settings. **Delete all data** removes all of that and the settings. Both ask you to type the server's name first.
 - **Removing the bot** from a server starts a 30-day countdown, after which all of that server's data is deleted. Adding the bot back within 30 days cancels it.
-- **A single player** can ask on the support server to have their data removed, in any server, and we will do it by hand. TODO(owner): confirm this promise and its deadline, and that the manual delete covers every table keyed by user id (hunters, items, runs, raid actions, materials, expeditions, titles, feedback, Forge donations, Contract deliveries, and the lever owner column, which has no foreign key); donation and delivery user ids can be empty; backups keep the data up to 6 hours.
+- **A single player** can ask on the support server to have their data removed, in any server, and the operator will delete it by hand within 15 days. Ask on the support server or by email at tavinq@hotmail.com. Backups expire as described above. A built-in option for this is planned.
 - **Private profile** only hides your build in `/inspect` and your item showcase. Your name, level and rank still show, and level-ups and raid results still mention you in public channels. Messages the bot already posted stay in the server's channels until a server admin deletes them.
+
+Whichever way you delete, copies in backups expire on their own schedule (see Backups above).
 
 ## Who else handles the data
 
-- **The server host.** The bot and its database run on a virtual private server (VPS). TODO(owner): provider name and country of the server.
-- **Error tracking.** A service that receives the error reports described above. TODO(owner): name and where it is hosted.
+- **The server host.** The bot and its database run on a virtual private server (VPS) rented from Hostinger, located in Brazil.
+- **Error tracking, logs and backups.** Bugsink (error reports), Loki (logs) and restic (backups) all run on the operator's own servers in Brazil, not at a third-party company.
 - **Discord.** The bot works through Discord, which has its own privacy policy.
 
 No player data goes to an AI model or any language-model service. The bot never calls one while you play. The game's portals and items are written offline, ahead of time, and checked by a person.
@@ -69,7 +73,9 @@ We do not sell data, show ads or share it for marketing.
 
 ## Your rights
 
-Under the LGPD you can ask to confirm that we hold your data, see it, fix it, delete it, or ask about how it is used. You can also ask for your data in a portable format, for information about who it is shared with (the services listed above, and nobody else), or for data that is unnecessary to be anonymized, blocked or deleted (LGPD Art. 18). Ask on the support server. TODO(owner): legal basis to name here (the game you asked to play, or legitimate interest) and how fast requests are answered.
+Under the LGPD you can ask to confirm that we hold your data, see it, fix it, delete it, or ask about how it is used. You can also ask for your data in a portable format, for information about who it is shared with (only the services listed above), or for unnecessary data to be anonymized, blocked or deleted (LGPD Art. 18). Ask on the support server or by email. We answer within 15 days (LGPD Art. 19, II).
+
+**Legal basis.** For your game data it is Art. 7, V: carrying out the service you chose to use. For logs and error reports it is Art. 7, IX: legitimate interest in keeping the bot running and secure.
 
 If you are in Brazil and not satisfied, you can also complain to the ANPD (Autoridade Nacional de Proteção de Dados).
 

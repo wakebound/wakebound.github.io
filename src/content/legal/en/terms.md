@@ -38,4 +38,4 @@ We can update these terms. The date at the top shows the latest version, and usi
 
 ## Contact
 
-Ask on the [support server](https://discord.gg/FdBgeCAYnz) or write to TODO(owner): contact email.
+Ask on the [support server](https://discord.gg/FdBgeCAYnz) or write to tavinq@hotmail.com.

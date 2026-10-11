@@ -38,4 +38,4 @@ Podemos atualizar estes termos. A data no topo mostra a versão mais recente, e 
 
 ## Contato
 
-Pergunte no [servidor de suporte](https://discord.gg/FdBgeCAYnz) ou escreva para TODO(owner): e-mail de contato.
+Pergunte no [servidor de suporte](https://discord.gg/FdBgeCAYnz) ou escreva para tavinq@hotmail.com.
