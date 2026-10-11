@@ -1,0 +1,17 @@
+{
+  "provoke": {
+    "hours": 3,
+    "counterCutPct": 40
+  },
+  "bless": {
+    "charges": 3,
+    "damagePct": 25
+  },
+  "arcaneMark": {
+    "hours": 2,
+    "damagePct": 15
+  },
+  "expose": {
+    "charges": 3
+  }
+}
