@@ -1,0 +1,14 @@
+:root{
+  --void:#0c0809; --crypt:#151010; --oxblood:#2a0c12; --edge:#33262a;
+  --bone:#efe6da; --ash:#b8ada5;
+  --blood:#c41e3a; --ice:#9bd8ff; --ice-dim:rgba(155,216,255,.38);
+  --rE:#78716c; --rD:#65a30d; --rC:#0891b2; --rB:#2563eb; --rA:#ea580c; --rS:#dc2626;
+  --uncommon:#4ade80; --rare:#3b82f6; --epic:#a855f7;
+  --display:'Grenze',Georgia,serif; --body:'Alegreya Sans',system-ui,sans-serif; --sys:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--void);color:var(--bone);font:19px/1.6 var(--body);overflow-x:hidden}
+:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+}
