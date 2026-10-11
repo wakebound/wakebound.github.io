@@ -7,7 +7,7 @@ O Wakebound é um bot de Discord: um jogo de texto e botões que você joga dent
 
 ## Quem é o responsável
 
-TODO(owner): nome legal da pessoa ou empresa que opera o Wakebound (o "controlador" na LGPD).
+O Wakebound é operado por Otavio Augusto Soares, pessoa física, que é o controlador destes dados nos termos da LGPD.
 
 Contato: o [servidor de suporte](https://discord.gg/FdBgeCAYnz) ou por e-mail em tavinq@hotmail.com.
 

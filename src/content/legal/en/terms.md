@@ -7,7 +7,7 @@ By adding Wakebound to a server or playing it, you agree to these terms. If you 
 
 ## What Wakebound is
 
-Wakebound is a free Discord bot: a game of portals, solo runs and cooperative raids, played with text and buttons. It sells nothing and asks for no payment. It is run by TODO(owner): name of the person or company that runs it.
+Wakebound is a free Discord bot: a game of portals, solo runs and cooperative raids, played with text and buttons. It sells nothing and asks for no payment. It is run by Otavio Augusto Soares, an individual.
 
 ## Using it
 

@@ -7,7 +7,7 @@ Wakebound is a Discord bot: a text-and-buttons game you play inside your server.
 
 ## Who is responsible
 
-TODO(owner): legal name of the person or company that runs Wakebound (the "controller" under the LGPD).
+Wakebound is run by Otavio Augusto Soares, an individual, who is the controller of this data under the LGPD.
 
 Contact: the [support server](https://discord.gg/FdBgeCAYnz) or by email at tavinq@hotmail.com.
 

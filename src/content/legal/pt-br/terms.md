@@ -7,7 +7,7 @@ Ao adicionar o Wakebound a um servidor ou jogar, você concorda com estes termos
 
 ## O que é o Wakebound
 
-O Wakebound é um bot de Discord gratuito: um jogo de portais, runs solo e raids cooperativas, jogado com texto e botões. Ele não vende nada e não pede pagamento. Quem opera é TODO(owner): nome da pessoa ou empresa que opera.
+O Wakebound é um bot de Discord gratuito: um jogo de portais, runs solo e raids cooperativas, jogado com texto e botões. Ele não vende nada e não pede pagamento. Quem opera é Otavio Augusto Soares, pessoa física.
 
 ## Como usar
 
