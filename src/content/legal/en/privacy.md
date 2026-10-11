@@ -23,15 +23,15 @@ Everything below is stored in a SQLite database, per server.
 
 **About each player, per server**
 - Your Discord user id, which is the only thing that ties the data to you.
-- Your hunter: class, level, XP, gold, potions, energy, HP, talents, title, which tips you have seen, whether the tutorial is done, and whether your profile is private.
-- Your game activity: items, materials, expeditions, titles earned, runs and the state they are in, raid actions, Forge donations and Contract deliveries.
+- Your hunter: class, level, XP, gold, potions, energy, HP, talents, title, injuries and other timers, which tips you have seen, whether the tutorial is done, and whether your profile is private.
+- Your game activity: items, materials, expeditions, titles earned, runs and the state they are in, raid actions, Forge donations and Contract deliveries, and when each happened (start, end and donation times).
 - Feedback: a rating (fun, meh or unfair) with the run it was about, and, if you use the Feedback button, the text you wrote.
 
 **Why:** to run the game. Without this data there is no hunter, no progress and no raid.
 
 ## Logs and error reports
 
-- **Game event log.** The bot writes one line per game event (a run started, a level up, a gold change) to its log, for balancing the game. It carries the server id and a hunter code: a short one-way hash of your user id and server id, made with a secret salt only the operator knows. It is pseudonymous, not anonymous. Without the salt the log stays off. Feedback text is never written to it.
+- **Game event log.** The bot writes one line per game event (a run started, a level up, a gold change) to its log, for balancing the game. It carries the server id and a hunter code: a short one-way hash of your user id and server id, made with a secret salt only the operator knows. It is pseudonymous, not anonymous. Without the salt the log stays off. Feedback text is never written to it. The bot also logs how long every command and button response takes, with the same hunter code, to keep the bot responsive.
 - **Error reports.** When the bot hits an error, it can send the error and a short context message to an error-tracking service. Request data is removed, the bot's own secrets are scrubbed, and hunters appear only as the hash code. A report can still contain a server or channel id.
 - **Uptime monitor.** The bot pings an uptime monitor once a minute. The ping carries no player data.
 
@@ -54,7 +54,8 @@ Ratings are not feedback text: they stay with the rest of your server's data unt
 
 - **A server admin** can open `/config`, then Data. **Reset progress** removes every hunter, item, run, portal, raid, the Forge and the Contracts, and keeps the settings. **Delete all data** removes all of that and the settings. Both ask you to type the server's name first.
 - **Removing the bot** from a server starts a 30-day countdown, after which all of that server's data is deleted. Adding the bot back within 30 days cancels it.
-- **A single player** can ask on the support server to have their data removed, in any server, and we will do it by hand. Setting your profile to private only hides it from others.
+- **A single player** can ask on the support server to have their data removed, in any server, and we will do it by hand. TODO(owner): confirm this promise and its deadline, and that the manual delete covers every table keyed by user id (hunters, items, runs, raid actions, materials, expeditions, titles, feedback, Forge donations, Contract deliveries, and the lever owner column, which has no foreign key); donation and delivery user ids can be empty; backups keep the data up to 6 hours.
+- **Private profile** only hides your build in `/inspect` and your item showcase. Your name, level and rank still show, and level-ups and raid results still mention you in public channels. Messages the bot already posted stay in the server's channels until a server admin deletes them.
 
 ## Who else handles the data
 
@@ -68,7 +69,7 @@ We do not sell data, show ads or share it for marketing.
 
 ## Your rights
 
-Under the LGPD you can ask to confirm that we hold your data, see it, fix it, delete it, or ask about how it is used. Ask on the support server. TODO(owner): legal basis to name here (the game you asked to play, or legitimate interest), whether single-player deletion requests are handled by hand as promised above, and how fast requests are answered.
+Under the LGPD you can ask to confirm that we hold your data, see it, fix it, delete it, or ask about how it is used. You can also ask for your data in a portable format, for information about who it is shared with (the services listed above, and nobody else), or for data that is unnecessary to be anonymized, blocked or deleted (LGPD Art. 18). Ask on the support server. TODO(owner): legal basis to name here (the game you asked to play, or legitimate interest) and how fast requests are answered.
 
 If you are in Brazil and not satisfied, you can also complain to the ANPD (Autoridade Nacional de Proteção de Dados).
 

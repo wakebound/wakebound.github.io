@@ -23,15 +23,15 @@ Tudo abaixo fica num banco SQLite, separado por servidor.
 
 **Sobre cada jogador, por servidor**
 - O seu id de usuário do Discord, a única coisa que liga os dados a você.
-- O seu caçador: classe, nível, XP, ouro, poções, energia, HP, talentos, título, quais dicas você já viu, se o tutorial foi concluído e se o seu perfil é privado.
-- A sua atividade no jogo: itens, materiais, expedições, títulos conquistados, runs e o estado delas, ações em raids, doações à Forja e entregas de Contratos.
+- O seu caçador: classe, nível, XP, ouro, poções, energia, HP, talentos, título, lesões e outros temporizadores, quais dicas você já viu, se o tutorial foi concluído e se o seu perfil é privado.
+- A sua atividade no jogo: itens, materiais, expedições, títulos conquistados, runs e o estado delas, ações em raids, doações à Forja e entregas de Contratos, e quando cada coisa aconteceu (horários de início, fim e doação).
 - Feedback: uma avaliação (divertido, mais ou menos ou injusto) com a run a que ela se refere e, se você usar o botão Feedback, o texto que escreveu.
 
 **Por quê:** para o jogo funcionar. Sem esses dados não existe caçador, progresso nem raid.
 
 ## Logs e relatórios de erro
 
-- **Log de eventos do jogo.** O bot escreve uma linha por evento (uma run começou, subiu de nível, mudou o ouro) no seu log, para equilibrar o jogo. A linha traz o id do servidor e um código do caçador: um hash curto, sem volta, do seu id de usuário com o id do servidor, feito com um sal secreto que só o operador conhece. É pseudônimo, não anônimo. Sem o sal, esse log fica desligado. O texto de feedback nunca vai para ele.
+- **Log de eventos do jogo.** O bot escreve uma linha por evento (uma run começou, subiu de nível, mudou o ouro) no seu log, para equilibrar o jogo. A linha traz o id do servidor e um código do caçador: um hash curto, sem volta, do seu id de usuário com o id do servidor, feito com um sal secreto que só o operador conhece. É pseudônimo, não anônimo. Sem o sal, esse log fica desligado. O texto de feedback nunca vai para ele. O bot também registra quanto tempo leva a resposta de cada comando e botão, com o mesmo código do caçador, para manter o bot rápido.
 - **Relatórios de erro.** Quando o bot encontra um erro, ele pode enviar o erro e uma mensagem curta de contexto para um serviço de rastreio de erros. Os dados da requisição são removidos, os segredos do próprio bot são apagados e os caçadores aparecem só como o código hash. Um relatório ainda pode conter o id de um servidor ou canal.
 - **Monitor de disponibilidade.** O bot dá um ping por minuto num monitor de disponibilidade. O ping não leva dados de jogadores.
 
@@ -54,7 +54,8 @@ Avaliações não são texto de feedback: elas ficam com o resto dos dados do se
 
 - **Um admin do servidor** abre `/config` e depois Dados. **Zerar progresso** remove todos os caçadores, itens, runs, portais, a raid, a Forja e os Contratos, e mantém as configurações. **Apagar todos os dados** remove tudo isso e também as configurações. Os dois pedem que você digite o nome do servidor antes.
 - **Remover o bot** de um servidor inicia uma contagem de 30 dias; depois dela, todos os dados daquele servidor são apagados. Adicionar o bot de volta dentro dos 30 dias cancela a exclusão.
-- **Um jogador sozinho** pode pedir no servidor de suporte para ter seus dados removidos, em qualquer servidor, e isso é feito à mão. Deixar o perfil privado só o esconde dos outros.
+- **Um jogador sozinho** pode pedir no servidor de suporte para ter seus dados removidos, em qualquer servidor, e isso é feito à mão. TODO(owner): confirmar essa promessa e o prazo, e que a exclusão manual cobre toda tabela ligada ao id de usuário (caçadores, itens, runs, ações em raids, materiais, expedições, títulos, feedback, doações à Forja, entregas de Contratos e a coluna do dono da alavanca, que não tem chave estrangeira); o id de usuário em doações e entregas pode estar vazio; os backups guardam o dado por até 6 horas.
+- **Perfil privado** só esconde a sua build no `/inspect` e a vitrine de itens. Seu nome, nível e rank continuam aparecendo, e subidas de nível e resultados de raid ainda mencionam você em canais públicos. Mensagens que o bot já publicou ficam nos canais do servidor até um admin do servidor apagá-las.
 
 ## Quem mais lida com os dados
 
@@ -68,7 +69,7 @@ Não vendemos dados, não mostramos anúncios e não compartilhamos para marketi
 
 ## Seus direitos
 
-Pela LGPD você pode pedir a confirmação de que temos seus dados, o acesso a eles, a correção, a exclusão ou informações sobre o uso. Peça no servidor de suporte. TODO(owner): base legal a citar aqui (o jogo que você quis jogar ou legítimo interesse), se os pedidos de exclusão de um único jogador são atendidos à mão como prometido acima e em quanto tempo os pedidos são respondidos.
+Pela LGPD você pode pedir a confirmação de que temos seus dados, o acesso a eles, a correção, a exclusão ou informações sobre o uso. Você também pode pedir seus dados em formato portável, informações sobre com quem eles são compartilhados (os serviços listados acima, e ninguém mais) ou a anonimização, o bloqueio ou a eliminação de dados desnecessários (LGPD, art. 18). Peça no servidor de suporte. TODO(owner): base legal a citar aqui (o jogo que você quis jogar ou legítimo interesse) e em quanto tempo os pedidos são respondidos.
 
 Se você está no Brasil e não ficou satisfeito, também pode reclamar à ANPD (Autoridade Nacional de Proteção de Dados).
 
