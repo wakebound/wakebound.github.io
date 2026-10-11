@@ -1,84 +1,84 @@
 {
   "en": [
     {
-      "id": 14,
+      "id": 65,
       "slot": "weapon",
       "name": "Notched Longsword",
       "description": "Every notch is a story its last owner never finished telling.",
       "image": "item_weapon.webp"
     },
     {
-      "id": 15,
+      "id": 66,
       "slot": "weapon",
       "name": "Ashwood Staff",
       "description": "Warm to the touch. Sparks crawl along the grain when you are angry.",
       "image": "item_weapon.webp"
     },
     {
-      "id": 16,
+      "id": 67,
       "slot": "weapon",
       "name": "Pilgrim Mace",
       "description": "A plain iron head blessed at seven shrines along the coast road.",
       "image": "item_weapon.webp"
     },
     {
-      "id": 17,
+      "id": 68,
       "slot": "weapon",
       "name": "Whisper Dagger",
       "description": "The blade makes no sound leaving its sheath, or a wound.",
       "image": "item_weapon.webp"
     },
     {
-      "id": 18,
+      "id": 69,
       "slot": "armor",
       "name": "Riveted Hauberk",
       "description": "Heavy, ugly and still standing after three wars.",
       "image": "item_armor.webp"
     },
     {
-      "id": 19,
+      "id": 70,
       "slot": "armor",
       "name": "Shadowweave Jerkin",
       "description": "Dyed in squid ink. Torchlight seems to slide right off it.",
       "image": "item_armor.webp"
     },
     {
-      "id": 20,
+      "id": 71,
       "slot": "armor",
       "name": "Embroidered Vestments",
       "description": "Hymns stitched in gold thread along the hem. They hum during prayer.",
       "image": "item_armor.webp"
     },
     {
-      "id": 21,
+      "id": 72,
       "slot": "armor",
       "name": "Runed Robe",
       "description": "The runes rearrange themselves whenever nobody is looking.",
       "image": "item_armor.webp"
     },
     {
-      "id": 22,
+      "id": 73,
       "slot": "accessory",
       "name": "Copper Signet",
       "description": "A merchant guild ring. Whoever wears it never quite feels tired.",
       "image": "item_accessory.webp"
     },
     {
-      "id": 23,
+      "id": 74,
       "slot": "accessory",
       "name": "Bone Charm",
       "description": "A wolf knuckle on a leather cord. It drinks a little of every kill.",
       "image": "item_accessory.webp"
     },
     {
-      "id": 24,
+      "id": 75,
       "slot": "accessory",
       "name": "Prayer Beads",
       "description": "Worn smooth by a hundred years of fingers counting them.",
       "image": "item_accessory.webp"
     },
     {
-      "id": 25,
+      "id": 76,
       "slot": "accessory",
       "name": "Lodestone Pendant",
       "description": "It pulls gently toward whatever is most dangerous in the room.",
@@ -87,87 +87,108 @@
   ],
   "pt-br": [
     {
-      "id": 39,
+      "id": 4,
       "slot": "weapon",
       "name": "Espada Longa Dentada",
       "description": "Cada dente na lâmina é uma história que o último dono não terminou de contar.",
       "image": "item_weapon.webp"
     },
     {
-      "id": 40,
-      "slot": "weapon",
-      "name": "Cajado de Freixo Cinza",
-      "description": "Morno ao toque. Faíscas correm pelos veios quando você se irrita.",
-      "image": "item_weapon.webp"
-    },
-    {
-      "id": 41,
-      "slot": "weapon",
-      "name": "Maça do Peregrino",
-      "description": "Uma cabeça de ferro simples, abençoada em sete santuários da estrada da costa.",
-      "image": "item_weapon.webp"
-    },
-    {
-      "id": 42,
-      "slot": "weapon",
-      "name": "Adaga Sussurro",
-      "description": "A lâmina não faz som ao sair da bainha, nem ao abrir uma ferida.",
-      "image": "item_weapon.webp"
-    },
-    {
-      "id": 43,
-      "slot": "armor",
-      "name": "Cota de Malha Rebitada",
-      "description": "Pesada, feia e ainda de pé depois de três guerras.",
-      "image": "item_armor.webp"
-    },
-    {
-      "id": 44,
+      "id": 5,
       "slot": "armor",
       "name": "Gibão Tecido em Sombra",
       "description": "Tingido com tinta de lula. A luz das tochas parece escorregar nele.",
       "image": "item_armor.webp"
     },
     {
-      "id": 45,
-      "slot": "armor",
-      "name": "Vestes Bordadas",
-      "description": "Hinos bordados em fio de ouro na barra. Elas zumbem durante a oração.",
-      "image": "item_armor.webp"
-    },
-    {
-      "id": 46,
-      "slot": "armor",
-      "name": "Manto Rúnico",
-      "description": "As runas se reorganizam sempre que ninguém está olhando.",
-      "image": "item_armor.webp"
-    },
-    {
-      "id": 47,
-      "slot": "accessory",
-      "name": "Sinete de Cobre",
-      "description": "Anel de uma guilda de mercadores. Quem o usa nunca chega a se sentir cansado.",
-      "image": "item_accessory.webp"
-    },
-    {
-      "id": 48,
+      "id": 6,
       "slot": "accessory",
       "name": "Amuleto de Osso",
       "description": "Um osso de pata de lobo num cordão de couro. Bebe um pouco de cada abate.",
       "image": "item_accessory.webp"
     },
     {
-      "id": 49,
-      "slot": "accessory",
-      "name": "Contas de Oração",
-      "description": "Gastas por cem anos de dedos contando cada uma.",
-      "image": "item_accessory.webp"
-    },
-    {
-      "id": 50,
+      "id": 7,
       "slot": "accessory",
       "name": "Pingente de Magnetita",
       "description": "Puxa de leve na direção do que for mais perigoso no lugar.",
+      "image": "item_accessory.webp"
+    },
+    {
+      "id": 15,
+      "slot": "armor",
+      "name": "Peitoral do Último Fôlego",
+      "description": "Você veste couro curtido em pântano e placas de ferro comido pela ferrugem. Cada respiração sua vira um desafio cuspido na cara do escuro.",
+      "image": "item_armor.webp"
+    },
+    {
+      "id": 20,
+      "slot": "weapon",
+      "name": "Fio do Bolso Fundo",
+      "description": "Uma adaga curta de cabo gasto, feita para quem prefere não ser visto. A lâmina escorrega para onde a atenção falha, e volta com o que sobra.",
+      "image": "item_weapon.webp"
+    },
+    {
+      "id": 33,
+      "slot": "accessory",
+      "name": "Lente do Corvo",
+      "description": "Uma lente lascada, presa por um aro de ferro velho. O corvo que a usava bicava os olhos dos mortos — agora, quem a carrega vê o que os vivos escondem.",
+      "image": "item_accessory.webp"
+    },
+    {
+      "id": 84,
+      "slot": "weapon",
+      "name": "Cajado de Freixo Cinza",
+      "description": "Morno ao toque. Faíscas correm pelos veios quando você se irrita.",
+      "image": "item_weapon.webp"
+    },
+    {
+      "id": 85,
+      "slot": "weapon",
+      "name": "Maça do Peregrino",
+      "description": "Uma cabeça de ferro simples, abençoada em sete santuários da estrada da costa.",
+      "image": "item_weapon.webp"
+    },
+    {
+      "id": 86,
+      "slot": "weapon",
+      "name": "Adaga Sussurro",
+      "description": "A lâmina não faz som ao sair da bainha, nem ao abrir uma ferida.",
+      "image": "item_weapon.webp"
+    },
+    {
+      "id": 87,
+      "slot": "armor",
+      "name": "Cota de Malha Rebitada",
+      "description": "Pesada, feia e ainda de pé depois de três guerras.",
+      "image": "item_armor.webp"
+    },
+    {
+      "id": 88,
+      "slot": "armor",
+      "name": "Vestes Bordadas",
+      "description": "Hinos bordados em fio de ouro na barra. Elas zumbem durante a oração.",
+      "image": "item_armor.webp"
+    },
+    {
+      "id": 89,
+      "slot": "armor",
+      "name": "Manto Rúnico",
+      "description": "As runas se reorganizam sempre que ninguém está olhando.",
+      "image": "item_armor.webp"
+    },
+    {
+      "id": 90,
+      "slot": "accessory",
+      "name": "Sinete de Cobre",
+      "description": "Anel de uma guilda de mercadores. Quem o usa nunca chega a se sentir cansado.",
+      "image": "item_accessory.webp"
+    },
+    {
+      "id": 91,
+      "slot": "accessory",
+      "name": "Contas de Oração",
+      "description": "Gastas por cem anos de dedos contando cada uma.",
       "image": "item_accessory.webp"
     }
   ]

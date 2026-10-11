@@ -1,7 +1,7 @@
 {
   "en": [
     {
-      "id": 1,
+      "id": 52,
       "kind": "solo",
       "rank": "E",
       "rooms": 3,
@@ -12,7 +12,7 @@
       "image": "banner_scene_sewer.webp"
     },
     {
-      "id": 2,
+      "id": 53,
       "kind": "solo",
       "rank": "E",
       "rooms": 3,
@@ -23,7 +23,7 @@
       "image": "banner_scene_ruins.webp"
     },
     {
-      "id": 3,
+      "id": 54,
       "kind": "solo",
       "rank": "D",
       "rooms": 3,
@@ -34,7 +34,7 @@
       "image": "banner_scene_crypt.webp"
     },
     {
-      "id": 4,
+      "id": 55,
       "kind": "solo",
       "rank": "D",
       "rooms": 3,
@@ -45,7 +45,7 @@
       "image": "banner_scene_forest.webp"
     },
     {
-      "id": 5,
+      "id": 56,
       "kind": "solo",
       "rank": "C",
       "rooms": 3,
@@ -56,7 +56,7 @@
       "image": "banner_scene_ruins.webp"
     },
     {
-      "id": 6,
+      "id": 57,
       "kind": "solo",
       "rank": "C",
       "rooms": 3,
@@ -67,7 +67,7 @@
       "image": "banner_scene_volcano.webp"
     },
     {
-      "id": 7,
+      "id": 58,
       "kind": "solo",
       "rank": "D",
       "rooms": 4,
@@ -78,7 +78,7 @@
       "image": "banner_scene_cave.webp"
     },
     {
-      "id": 8,
+      "id": 59,
       "kind": "solo",
       "rank": "D",
       "rooms": 4,
@@ -89,7 +89,7 @@
       "image": "banner_scene_forest.webp"
     },
     {
-      "id": 9,
+      "id": 60,
       "kind": "solo",
       "rank": "C",
       "rooms": 5,
@@ -100,7 +100,7 @@
       "image": "banner_scene_void.webp"
     },
     {
-      "id": 10,
+      "id": 61,
       "kind": "solo",
       "rank": "C",
       "rooms": 5,
@@ -111,7 +111,7 @@
       "image": "banner_scene_ruins.webp"
     },
     {
-      "id": 11,
+      "id": 62,
       "kind": "solo",
       "rank": "C",
       "rooms": 10,
@@ -122,7 +122,7 @@
       "image": "banner_scene_void.webp"
     },
     {
-      "id": 12,
+      "id": 63,
       "kind": "raid",
       "rank": "B",
       "rooms": null,
@@ -133,7 +133,7 @@
       "image": "banner_raid_volcano.webp"
     },
     {
-      "id": 13,
+      "id": 64,
       "kind": "raid",
       "rank": "B",
       "rooms": null,
@@ -146,40 +146,7 @@
   ],
   "pt-br": [
     {
-      "id": 26,
-      "kind": "solo",
-      "rank": "E",
-      "rooms": 3,
-      "name": "O Porão Alagado",
-      "hook": "Uma fenda verde abriu embaixo da taverna. Alguma coisa lá embaixo está comendo o queijo.",
-      "scene": "sewer",
-      "boss": null,
-      "image": "banner_scene_sewer.webp"
-    },
-    {
-      "id": 27,
-      "kind": "solo",
-      "rank": "E",
-      "rooms": 3,
-      "name": "Posto dos Goblins",
-      "hook": "Fumaça sobe de uma fenda na velha estrada do morro. Goblins ergueram uma torre de sucata.",
-      "scene": "ruins",
-      "boss": null,
-      "image": "banner_scene_ruins.webp"
-    },
-    {
-      "id": 28,
-      "kind": "solo",
-      "rank": "D",
-      "rooms": 3,
-      "name": "A Capela Oca",
-      "hook": "Os sinos de uma capela abandonada tocam à meia-noite. Ninguém puxa a corda há anos.",
-      "scene": "crypt",
-      "boss": null,
-      "image": "banner_scene_crypt.webp"
-    },
-    {
-      "id": 29,
+      "id": 1,
       "kind": "solo",
       "rank": "D",
       "rooms": 3,
@@ -190,7 +157,7 @@
       "image": "banner_scene_forest.webp"
     },
     {
-      "id": 30,
+      "id": 2,
       "kind": "solo",
       "rank": "C",
       "rooms": 3,
@@ -201,7 +168,7 @@
       "image": "banner_scene_ruins.webp"
     },
     {
-      "id": 31,
+      "id": 3,
       "kind": "solo",
       "rank": "C",
       "rooms": 3,
@@ -212,29 +179,40 @@
       "image": "banner_scene_volcano.webp"
     },
     {
-      "id": 32,
+      "id": 8,
       "kind": "solo",
       "rank": "D",
-      "rooms": 4,
-      "name": "A Mina de Sal",
-      "hook": "Uma fenda rasgou o chão da velha mina de sal. O turno da noite nunca voltou à superfície.",
-      "scene": "cave",
+      "rooms": 3,
+      "name": "Moinho Afogado",
+      "hook": "O moinho parou de moer grão quando a água subiu pela porta. Agora mói o que entra. Lá dentro ainda cheira a pão velho, e isso é quase um convite.",
+      "scene": null,
       "boss": null,
-      "image": "banner_scene_cave.webp"
+      "image": "banner_combat.webp"
     },
     {
-      "id": 33,
+      "id": 9,
       "kind": "solo",
-      "rank": "D",
-      "rooms": 4,
-      "name": "O Pomar ao Luar",
-      "hook": "Um pomar surgiu no penhasco ao anoitecer. As maçãs brilham, e os espantalhos começaram a andar.",
-      "scene": "forest",
+      "rank": "C",
+      "rooms": 3,
+      "name": "O Moinho Que Range",
+      "hook": "A porta se abre num moinho enterrado, e a mó ainda gira sem vento. Alguém mói farinha que não é farinha. Você desce; a escada range de volta.",
+      "scene": null,
       "boss": null,
-      "image": "banner_scene_forest.webp"
+      "image": "banner_combat.webp"
     },
     {
-      "id": 34,
+      "id": 10,
+      "kind": "raid",
+      "rank": "B",
+      "rooms": null,
+      "name": "Moinho de Água Parada",
+      "hook": "A roda gira desde a cheia do ano passado, mas o rio que a movia secou e ninguém lembra de tê-lo desviado. Quem chega perto ouve as mós trabalhando por dentro. O moinho não mói grão. Mói o que lhe jogu",
+      "scene": null,
+      "boss": "Moleiro de Junco",
+      "image": "banner_raid.webp"
+    },
+    {
+      "id": 29,
       "kind": "solo",
       "rank": "C",
       "rooms": 5,
@@ -245,7 +223,7 @@
       "image": "banner_scene_void.webp"
     },
     {
-      "id": 35,
+      "id": 30,
       "kind": "solo",
       "rank": "C",
       "rooms": 5,
@@ -256,7 +234,7 @@
       "image": "banner_scene_ruins.webp"
     },
     {
-      "id": 36,
+      "id": 31,
       "kind": "solo",
       "rank": "C",
       "rooms": 10,
@@ -267,7 +245,73 @@
       "image": "banner_scene_void.webp"
     },
     {
-      "id": 37,
+      "id": 32,
+      "kind": "solo",
+      "rank": "C",
+      "rooms": 5,
+      "name": "Porão do Relojoeiro",
+      "hook": "O porão de uma velha relojoaria que ninguém lembra ter existido. Lá dentro, os ponteiros andam ao contrário e cada tique é um osso que estala em algum lugar escuro.",
+      "scene": null,
+      "boss": null,
+      "image": "banner_combat.webp"
+    },
+    {
+      "id": 77,
+      "kind": "solo",
+      "rank": "E",
+      "rooms": 3,
+      "name": "O Porão Alagado",
+      "hook": "Uma fenda verde abriu embaixo da taverna. Alguma coisa lá embaixo está comendo o queijo.",
+      "scene": "sewer",
+      "boss": null,
+      "image": "banner_scene_sewer.webp"
+    },
+    {
+      "id": 78,
+      "kind": "solo",
+      "rank": "E",
+      "rooms": 3,
+      "name": "Posto dos Goblins",
+      "hook": "Fumaça sobe de uma fenda na velha estrada do morro. Goblins ergueram uma torre de sucata.",
+      "scene": "ruins",
+      "boss": null,
+      "image": "banner_scene_ruins.webp"
+    },
+    {
+      "id": 79,
+      "kind": "solo",
+      "rank": "D",
+      "rooms": 3,
+      "name": "A Capela Oca",
+      "hook": "Os sinos de uma capela abandonada tocam à meia-noite. Ninguém puxa a corda há anos.",
+      "scene": "crypt",
+      "boss": null,
+      "image": "banner_scene_crypt.webp"
+    },
+    {
+      "id": 80,
+      "kind": "solo",
+      "rank": "D",
+      "rooms": 4,
+      "name": "A Mina de Sal",
+      "hook": "Uma fenda rasgou o chão da velha mina de sal. O turno da noite nunca voltou à superfície.",
+      "scene": "cave",
+      "boss": null,
+      "image": "banner_scene_cave.webp"
+    },
+    {
+      "id": 81,
+      "kind": "solo",
+      "rank": "D",
+      "rooms": 4,
+      "name": "O Pomar ao Luar",
+      "hook": "Um pomar surgiu no penhasco ao anoitecer. As maçãs brilham, e os espantalhos começaram a andar.",
+      "scene": "forest",
+      "boss": null,
+      "image": "banner_scene_forest.webp"
+    },
+    {
+      "id": 82,
       "kind": "raid",
       "rank": "B",
       "rooms": null,
@@ -278,7 +322,7 @@
       "image": "banner_raid_volcano.webp"
     },
     {
-      "id": 38,
+      "id": 83,
       "kind": "raid",
       "rank": "B",
       "rooms": null,
