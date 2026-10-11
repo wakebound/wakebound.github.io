@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets';
+import warrior from '../assets/art/class_warrior.webp';
+import cleric from '../assets/art/class_cleric.webp';
+import mage from '../assets/art/class_mage.webp';
+import rogue from '../assets/art/class_rogue.webp';
+import levers from '../data/levers.json';
+import { t, type Locale } from '../i18n/t.ts';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+
+const leverText = {
+  warrior: t(locale, 'lever.provoke', { cut: levers.provoke.counterCutPct, hours: levers.provoke.hours }),
+  cleric: t(locale, 'lever.bless', { pct: levers.bless.damagePct, charges: levers.bless.charges }),
+  mage: t(locale, 'lever.arcaneMark', { pct: levers.arcaneMark.damagePct, hours: levers.arcaneMark.hours }),
+  rogue: t(locale, 'lever.expose', { charges: levers.expose.charges }),
+};
+const classes = [
+  { id: 'warrior', art: warrior },
+  { id: 'cleric', art: cleric },
+  { id: 'mage', art: mage },
+  { id: 'rogue', art: rogue },
+] as const;
+---
+<section class="classes" id="classes"><div class="wrap grid">
+  <p class="sysline">{t(locale, 'classes.system')}</p>
+  {classes.map(({ id, art }, index) => (
+    <article class="panel" data-class={id} hidden={index > 0}>
+      <div class="portrait"><Image src={art} alt={t(locale, `alt.${id}`)} widths={[480, 720]} sizes="(max-width: 900px) 100vw, 560px" loading="lazy" /></div>
+      <div class="text">
+        <h2 class="cls-name">{t(locale, `class.${id}.name`)}</h2>
+        <p class="cls-role">{t(locale, `class.${id}.role`)}</p>
+        <dl class="kit">
+          <div><dt>{t(locale, 'classes.skill')}</dt><dd><b>{t(locale, `class.${id}.skill`)}</b>{t(locale, `class.${id}.skillDesc`)}</dd></div>
+          <div><dt>{t(locale, 'classes.inRaids')}</dt><dd><b>{t(locale, `class.${id}.lever`)}</b>{t(locale, `class.${id}.leverDesc`)} {leverText[id]}</dd></div>
+        </dl>
+      </div>
+    </article>
+  ))}
+  <div class="picker" role="group" aria-label={t(locale, 'classes.group')}>
+    {classes.map(({ id, art }, index) => (
+      <button type="button" data-class={id} aria-pressed={index === 0 ? 'true' : 'false'}>
+        <Image src={art} alt="" width={152} height={152} loading="lazy" /><span>{t(locale, `class.${id}.name`)}</span>
+      </button>
+    ))}
+  </div>
+</div></section>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.picker button');
+  const panels = document.querySelectorAll<HTMLElement>('.classes .panel');
+  buttons.forEach((button) => button.addEventListener('click', () => {
+    buttons.forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+    panels.forEach((panel) => { panel.hidden = panel.dataset.class !== button.dataset.class; });
+  }));
+</script>
+
+<style>
+  .classes{background:radial-gradient(ellipse at 30% 40%,#3a0f18,var(--oxblood) 60%,#1a070b);padding:110px 0}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;align-items:end}
+  .sysline{grid-column:2;grid-row:1;font:15px/1.6 var(--sys);color:var(--ice)}
+  .panel{display:contents}
+  .portrait{grid-column:1;grid-row:1/4;align-self:center}
+  .text{grid-column:2;grid-row:2;align-self:start}
+  .picker{grid-column:2;grid-row:3}
+  .panel[hidden]{display:none}
+  .portrait img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 75% 75% at 50% 45%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 75% 75% at 50% 45%,#000 55%,transparent 100%)}
+  .cls-name{font:800 clamp(56px,8vw,104px)/.9 var(--display)}
+  .cls-role{font-size:21px;margin-top:12px;max-width:34ch}
+  .kit{margin-top:26px;display:grid;gap:16px}
+  .kit div{border-left:2px solid var(--blood);padding-left:14px}
+  .kit dt{color:var(--ash);font-size:16px}
+  .kit dd{font-size:19px}
+  .picker{display:flex;gap:12px;margin-top:30px}
+  .picker button{all:unset;cursor:pointer;width:76px;text-align:center;font:600 16px var(--body);color:var(--ash)}
+  .picker button img{width:76px;height:76px;object-fit:cover;border:2px solid transparent;filter:grayscale(.6) brightness(.8);transition:filter .2s,border-color .2s}
+  .picker button[aria-pressed="true"] img,.picker button:hover img{filter:none;border-color:var(--bone)}
+  .picker button[aria-pressed="true"]{color:var(--bone)}
+  .picker button:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+  @media (max-width:900px){
+    .grid{grid-template-columns:minmax(0,1fr);row-gap:20px}
+    .sysline,.portrait,.text,.picker{grid-column:1;grid-row:auto}
+    .picker button,.picker button img{width:64px}
+    .picker button img{height:64px}
+  }
+</style>

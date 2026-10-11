@@ -3,6 +3,8 @@ import type { Locale } from '../i18n/t.ts';
 import TopBar from './TopBar.astro';
 import Hero from './Hero.astro';
 import RankDivider from './RankDivider.astro';
+import ClassPicker from './ClassPicker.astro';
+import RaidBand from './RaidBand.astro';
 import Footer from './Footer.astro';
 
 interface Props { locale: Locale }
@@ -12,6 +14,8 @@ const { locale } = Astro.props;
 <main>
   <Hero locale={locale} />
   <RankDivider />
+  <ClassPicker locale={locale} />
+  <RaidBand locale={locale} />
 </main>
 <Footer locale={locale} />
 
