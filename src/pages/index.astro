@@ -1,0 +1,6 @@
+---
+import Base from '../layouts/Base.astro';
+import Landing from '../components/Landing.astro';
+import { t } from '../i18n/t.ts';
+---
+<Base locale="en" title={t('en', 'meta.title')} description={t('en', 'meta.description')} path="/"><Landing locale="en" /></Base>

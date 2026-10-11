@@ -1,0 +1,25 @@
+---
+import { t, type Locale } from '../i18n/t.ts';
+import { SUPPORT_INVITE } from './links.ts';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const legal = locale === 'en' ? { privacy: '/privacy/', terms: '/terms/' } : { privacy: '/pt-br/privacidade/', terms: '/pt-br/termos/' };
+---
+<footer><div class="wrap">
+  <div><div class="mark">Wakebound</div><div class="credits">{t(locale, 'footer.credits')}</div></div>
+  <nav aria-label={t(locale, 'nav.footer')}>
+    <a href={legal.privacy}>{t(locale, 'footer.privacy')}</a>
+    <a href={legal.terms}>{t(locale, 'footer.terms')}</a>
+    <a href={SUPPORT_INVITE}>{t(locale, 'footer.support')}</a>
+  </nav>
+</div></footer>
+
+<style>
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  footer{border-top:1px solid var(--edge);padding:36px 0 56px;color:var(--ash);font-size:16px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+  nav{display:flex;flex-wrap:wrap;gap:20px;color:var(--bone)}
+  .mark{font:800 22px/1 var(--display)}
+  .credits{margin-top:6px}
+</style>

@@ -1,0 +1,42 @@
+---
+import { getImage } from 'astro:assets';
+import banner from '../assets/art/banner_raid.webp';
+import levers from '../data/levers.json';
+import { t, type Locale } from '../i18n/t.ts';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const background = await getImage({ src: banner, format: 'webp', width: 1920 });
+const cells = [
+  { id: 'warrior', lever: 'lever.provoke', vars: { cut: levers.provoke.counterCutPct, hours: levers.provoke.hours } },
+  { id: 'cleric', lever: 'lever.bless', vars: { pct: levers.bless.damagePct, charges: levers.bless.charges } },
+  { id: 'mage', lever: 'lever.arcaneMark', vars: { pct: levers.arcaneMark.damagePct, hours: levers.arcaneMark.hours } },
+  { id: 'rogue', lever: 'lever.expose', vars: { charges: levers.expose.charges } },
+] as const;
+---
+<section class="band" id="raids" style={`--band-bg:url("${background.src}")`}><div class="wrap">
+  <h2>{t(locale, 'raid.title')}</h2>
+  <p class="sub">{t(locale, 'raid.body')}</p>
+</div></section>
+<div class="wrap"><div class="levers">
+  {cells.map(({ id, lever, vars }) => (
+    <div><b>{t(locale, `class.${id}.name`)}</b><span>{t(locale, `class.${id}.lever`)}</span><p>{t(locale, lever, vars)}</p></div>
+  ))}
+</div></div>
+
+<style>
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  h2{font:800 clamp(40px,6vw,76px)/.98 var(--display);letter-spacing:-.015em}
+  .band{position:relative;isolation:isolate;min-height:88vh;display:grid;place-items:center;text-align:center;padding:96px 0}
+  .band::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--band-bg) center/cover}
+  .band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--void),rgba(12,8,9,.35) 30%,rgba(12,8,9,.35) 60%,var(--void))}
+  .band h2{max-width:20ch;margin:0 auto}
+  .band .sub{margin:18px auto 0;color:var(--bone)}
+  .levers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--edge);border:1px solid var(--edge);margin-top:-1px}
+  .levers div{background:var(--void);padding:26px 22px}
+  .levers b{font:700 24px var(--display);display:block}
+  .levers span{display:block;color:var(--ash);font-size:16px}
+  .levers p{margin-top:8px;font-size:18px}
+  @media (max-width:900px){.levers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:480px){.levers{grid-template-columns:minmax(0,1fr)}}
+</style>

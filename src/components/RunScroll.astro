@@ -1,0 +1,72 @@
+---
+import { t, type Locale } from '../i18n/t.ts';
+import DiscordShot from './DiscordShot.astro';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const steps = [
+  { n: 1, name: 'board', system: false },
+  { n: 2, name: 'warning', system: true },
+  { n: 3, name: 'choice', system: false },
+  { n: 4, name: 'cleared', system: false },
+] as const;
+---
+<section class="run" id="run"><div class="wrap run-grid">
+  <h2 class="sr-only">{t(locale, 'run.heading')}</h2>
+  <div class="steps">
+    {steps.map(({ n, name, system }) => (
+      <div class="step" data-step={n}>
+        <h3>{t(locale, `run.${n}.title`)}</h3>
+        <p>{t(locale, `run.${n}.body`)}</p>
+        {system && <p class="sysline">{t(locale, 'run.2.system')}</p>}
+        <div class="shot"><DiscordShot locale={locale} name={name} alt={t(locale, `alt.shot.${name}`)} enlarge={t(locale, 'run.enlarge')} /></div>
+      </div>
+    ))}
+  </div>
+  <div class="stage" data-stage data-step="1" aria-hidden="true">
+    {steps.map(({ n, name }) => (
+      <div class="stage-shot" data-n={n}><DiscordShot locale={locale} name={name} alt="" /></div>
+    ))}
+  </div>
+</div></section>
+
+<script>
+  const stage = document.querySelector<HTMLElement>('[data-stage]');
+  const steps = document.querySelectorAll<HTMLElement>('[data-step]:not([data-stage])');
+  if (stage) {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          stage.dataset.step = entry.target.getAttribute('data-step') ?? '1';
+        }
+      }),
+      { rootMargin: '-45% 0px -45% 0px' },
+    );
+    steps.forEach((step) => observer.observe(step));
+  }
+</script>
+
+<style>
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .run{position:relative;padding:72px 0}
+  .run-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px}
+  .step{min-height:92vh;display:flex;flex-direction:column;justify-content:center}
+  .step h3{font:800 clamp(34px,4.4vw,54px)/1 var(--display)}
+  .step p{color:var(--ash);font-size:20px;max-width:36ch;margin-top:14px}
+  .step p.sysline{font:16px/1.6 var(--sys);color:var(--ice)}
+  .stage{display:none;position:sticky;top:12vh;height:76vh;place-items:center}
+  .stage-shot{grid-area:1/1;width:100%;max-width:560px;opacity:0;transform:translateY(16px) scale(.98);transition:opacity .45s,transform .45s}
+  .stage[data-step="1"] .stage-shot[data-n="1"],.stage[data-step="2"] .stage-shot[data-n="2"],.stage[data-step="3"] .stage-shot[data-n="3"],.stage[data-step="4"] .stage-shot[data-n="4"]{opacity:1;transform:none}
+  .shot{margin-top:18px;max-width:560px}
+  @media (max-width:560px){.shot{margin-left:-16px;margin-right:-16px;max-width:none}.shot :global(.discord-shot){border-radius:0;border-left:0;border-right:0}}
+  :global(html.js) .stage{display:grid}
+  :global(html.js) .step .shot{display:none}
+  @media (max-width:900px){
+    .run-grid{grid-template-columns:minmax(0,1fr)}
+    .step{min-height:auto;padding:28px 0}
+    :global(html.js) .stage{display:none}
+    :global(html.js) .step .shot{display:block}
+  }
+  @media (prefers-reduced-motion:reduce){.stage-shot{transition:none}}
+</style>
