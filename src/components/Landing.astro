@@ -5,6 +5,8 @@ import Hero from './Hero.astro';
 import RankDivider from './RankDivider.astro';
 import ClassPicker from './ClassPicker.astro';
 import RaidBand from './RaidBand.astro';
+import WorldBento from './WorldBento.astro';
+import AdminFacts from './AdminFacts.astro';
 import Footer from './Footer.astro';
 
 interface Props { locale: Locale }
@@ -16,6 +18,8 @@ const { locale } = Astro.props;
   <RankDivider />
   <ClassPicker locale={locale} />
   <RaidBand locale={locale} />
+  <WorldBento locale={locale} />
+  <AdminFacts locale={locale} />
 </main>
 <Footer locale={locale} />
 
