@@ -12,6 +12,7 @@ const steps = [
 ] as const;
 ---
 <section class="run" id="run"><div class="wrap run-grid">
+  <h2 class="sr-only">{t(locale, 'run.heading')}</h2>
   <div class="steps">
     {steps.map(({ n, name, system }) => (
       <div class="step" data-step={n}>
@@ -43,6 +44,7 @@ const steps = [
 
 <style>
   .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .run{position:relative;padding:72px 0}
   .run-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px}
   .step{min-height:92vh;display:flex;flex-direction:column;justify-content:center}

@@ -19,5 +19,6 @@ const full = enlarge ? await getImage({ src: shot.default, format: 'webp', width
 
 <style>
   .discord-shot{width:100%;height:auto;border-radius:8px;border:1px solid #1e1f22;box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
-  .hint{display:block;margin:6px 16px 0;font:16px/1.4 var(--sys);color:var(--ash)}
+  .hint{display:none;margin:6px 16px 0;font:16px/1.4 var(--sys);color:var(--ash)}
+  @media (max-width:560px){.hint{display:block}}
 </style>

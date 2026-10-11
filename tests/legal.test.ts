@@ -13,10 +13,13 @@ describe.each(['privacy', 'terms'])('%s', (name) => {
     expect(updated(ptBr)).toBe(updated(en));
   });
 
-  it('has the same sections and the same owner placeholders in both languages', () => {
+  it('has the same sections in both languages', () => {
     const headings = (text: string): number => (text.match(/^## /gm) ?? []).length;
-    const todos = (text: string): number => (text.match(/TODO\(owner\)/g) ?? []).length;
     expect(headings(ptBr)).toBe(headings(en));
-    expect(todos(ptBr)).toBe(todos(en));
+  });
+
+  it('has no unresolved TODO markers', () => {
+    expect(en).not.toContain('TODO(');
+    expect(ptBr).not.toContain('TODO(');
   });
 });

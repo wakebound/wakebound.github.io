@@ -73,7 +73,8 @@ const classes = [
   .kit div{border-left:2px solid var(--blood);padding-left:14px}
   .kit dt{color:var(--ash);font-size:16px}
   .kit dd{font-size:19px}
-  .picker{display:flex;gap:12px;margin-top:30px}
+  .picker{display:none;gap:12px;margin-top:30px}
+  :global(html.js) .picker{display:flex}
   .picker button{all:unset;cursor:pointer;width:76px;text-align:center;font:600 16px var(--body);color:var(--ash)}
   .picker button img{width:76px;height:76px;object-fit:cover;border:2px solid transparent;filter:grayscale(.6) brightness(.8);transition:filter .2s,border-color .2s}
   .picker button[aria-pressed="true"] img,.picker button:hover img{filter:none;border-color:var(--bone)}
