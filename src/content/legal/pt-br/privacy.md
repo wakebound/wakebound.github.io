@@ -15,7 +15,7 @@ Contato: o [servidor de suporte](https://discord.gg/FdBgeCAYnz) ou por e-mail em
 
 O bot lê só o que o Discord envia quando alguém usa um comando ou um botão. Ele não lê as mensagens dos seus canais (pede ao Discord apenas a intent Guilds) e nunca guarda nomes de usuário, avatares, e-mails, endereços IP nem mensagens diretas.
 
-Tudo abaixo fica num banco SQLite, separado por servidor.
+Tudo abaixo é guardado por servidor, num servidor alugado no Brasil.
 
 **Sobre o seu servidor**
 - O id do servidor, o idioma e o fuso horário, os canais e o cargo de admin escolhidos no `/config`, os ids das mensagens do próprio bot (quadro, raid e contrato), as configurações do servidor e a data em que o bot foi removido (se foi).
@@ -31,11 +31,12 @@ Tudo abaixo fica num banco SQLite, separado por servidor.
 
 ## Logs e relatórios de erro
 
-- **Log de eventos do jogo.** O bot escreve uma linha por evento (uma run começou, subiu de nível, mudou o ouro) no seu log, para equilibrar o jogo. A linha traz o id do servidor e um código do caçador: um hash curto, sem volta, do seu id de usuário com o id do servidor, feito com um sal secreto que só o operador conhece. É pseudônimo, não anônimo. Sem o sal, esse log fica desligado. O texto de feedback nunca vai para ele. O bot também registra quanto tempo leva a resposta de cada comando e botão, com o mesmo código do caçador, para manter o bot rápido.
-- **Relatórios de erro.** Quando o bot encontra um erro, ele pode enviar o erro e uma mensagem curta de contexto para um serviço de rastreio de erros. Os dados da requisição são removidos, os segredos do próprio bot são apagados e os caçadores aparecem só como o código hash. Um relatório ainda pode conter o id de um servidor ou canal.
-- **Monitor de disponibilidade.** O bot dá um ping por minuto num monitor de disponibilidade. O ping não leva dados de jogadores.
+Para manter o jogo equilibrado, funcionando e seguro, o bot guarda logs técnicos e relatórios de erro.
 
-Os logs do contêiner do bot giram no servidor (cerca de 30 MB, as linhas mais antigas são descartadas) e são copiados para o servidor de logs do próprio operador, no Brasil, onde ficam 30 dias. As linhas de eventos do jogo ali trazem o id do servidor e o código hash do caçador. Os relatórios de erro vão para um rastreador de erros Bugsink, mantido pelo operador no próprio servidor dele, no Brasil, e são apagados após 90 dias.
+- **Eventos do jogo.** Uma linha por evento (uma run começou, subiu de nível, mudou o ouro) e quanto tempo cada comando ou botão levou para responder. Elas trazem o id do servidor e um código pseudônimo no lugar do seu id do Discord. O texto de feedback nunca entra nelas.
+- **Relatórios de erro.** Quando algo quebra, o erro e uma nota curta são registrados. Dados da requisição e segredos do bot são removidos. Um relatório ainda pode conter o id de um servidor ou canal.
+
+Logs e relatórios de erro ficam em servidores do próprio operador, no Brasil. Os logs ficam 30 dias e os relatórios de erro, 90 dias.
 
 ## Por quanto tempo fica guardado
 
@@ -43,28 +44,25 @@ Os logs do contêiner do bot giram no servidor (cerca de 30 MB, as linhas mais a
 | --- | --- |
 | Texto de feedback | Apagado 30 dias depois de escrito |
 | Todo o resto de um servidor | Até o servidor zerar ou apagar, ou remover o bot e passarem 30 dias |
-| Snapshot do banco no servidor | Um arquivo, reescrito a cada 6 horas |
-| Cópias de backup | Até cerca de 6 meses (7 diárias, 4 semanais e 6 mensais), depois expiram |
-| Logs do contêiner | Cerca de 30 MB no servidor, depois 30 dias no servidor de logs do operador |
-| Relatórios de erro | Apagados após 90 dias |
-
-**Backups.** Uma vez por dia o snapshot do bot é copiado para o servidor de backup do próprio operador, no Brasil, num repositório restic criptografado, que guarda 7 cópias diárias, 4 semanais e 6 mensais. Isso significa que dados que você apaga do jogo podem continuar nesses backups por até cerca de 6 meses, até as cópias expirarem. Os backups servem só para restaurar o serviço depois de uma falha; não são lidos para mais nada. TODO(owner): se uma segunda cópia dos backups também vai para o armazenamento em nuvem Backblaze B2, e em qual região.
+| Logs técnicos | 30 dias |
+| Relatórios de erro | 90 dias |
+| Backups | Cada backup por até cerca de 6 meses |
 
 Avaliações não são texto de feedback: elas ficam com o resto dos dados do seu servidor até ele ser apagado.
+
+**Backups.** Backups criptografados do jogo ficam num servidor do próprio operador, no Brasil, e com um provedor de armazenamento em nuvem nos Estados Unidos. Servem só para restaurar o serviço depois de uma falha. Dados que você apaga do jogo podem continuar nos backups por até cerca de 6 meses, até eles expirarem.
 
 ## Como apagar seus dados
 
 - **Um admin do servidor** abre `/config` e depois Dados. **Zerar progresso** remove todos os caçadores, itens, runs, portais, a raid, a Forja e os Contratos, e mantém as configurações. **Apagar todos os dados** remove tudo isso e também as configurações. Os dois pedem que você digite o nome do servidor antes.
 - **Remover o bot** de um servidor inicia uma contagem de 30 dias; depois dela, todos os dados daquele servidor são apagados. Adicionar o bot de volta dentro dos 30 dias cancela a exclusão.
-- **Um jogador sozinho** pode pedir no servidor de suporte para ter seus dados removidos, em qualquer servidor, e o operador apaga à mão em até 15 dias. Peça no servidor de suporte ou por e-mail em tavinq@hotmail.com. Os backups expiram como descrito acima. Uma opção própria dentro do jogo está planejada.
+- **Um jogador sozinho** pode pedir no servidor de suporte ou por e-mail em tavinq@hotmail.com para ter seus dados removidos, em qualquer servidor. O operador apaga à mão em até 15 dias. Os backups expiram como descrito acima. Uma opção própria dentro do jogo está planejada.
 - **Perfil privado** só esconde a sua build no `/inspect` e a vitrine de itens. Seu nome, nível e rank continuam aparecendo, e subidas de nível e resultados de raid ainda mencionam você em canais públicos. Mensagens que o bot já publicou ficam nos canais do servidor até um admin do servidor apagá-las.
-
-Seja qual for o jeito de apagar, as cópias nos backups expiram no prazo delas (veja Backups acima).
 
 ## Quem mais lida com os dados
 
-- **A hospedagem.** O bot e o banco rodam num servidor virtual privado (VPS) alugado da Hostinger, no Brasil.
-- **Rastreio de erros, logs e backups.** Bugsink (relatórios de erro), Loki (logs) e restic (backups) rodam todos em servidores do próprio operador, no Brasil, e não numa empresa terceira.
+- **Hospedagem.** O bot roda num servidor alugado no Brasil.
+- **Backup na nuvem.** Um provedor de armazenamento em nuvem nos Estados Unidos guarda as cópias criptografadas de backup descritas acima. Isso é uma transferência internacional nos termos do art. 33 da LGPD: a cópia é criptografada antes de sair e o provedor não consegue lê-la; ela é guardada apenas como backup.
 - **Discord.** O bot funciona pelo Discord, que tem a própria política de privacidade.
 
 Nenhum dado de jogador vai para um modelo de IA ou qualquer serviço de modelo de linguagem. O bot nunca chama um enquanto você joga. Os portais e itens do jogo são escritos antes, offline, e revisados por uma pessoa.

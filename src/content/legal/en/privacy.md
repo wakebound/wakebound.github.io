@@ -15,7 +15,7 @@ Contact: the [support server](https://discord.gg/FdBgeCAYnz) or by email at tavi
 
 The bot reads only what Discord sends when someone uses a command or a button. It does not read messages in your channels (it asks Discord for the Guilds intent only), and it never stores usernames, avatars, emails, IP addresses or direct messages.
 
-Everything below is stored in a SQLite database, per server.
+Everything below is stored per server, on a rented server in Brazil.
 
 **About your server**
 - The server id, its language and timezone, the channels and admin role chosen in `/config`, the ids of the bot's own board, raid and contract messages, the server's settings, and the date the bot was removed (if it was).
@@ -31,11 +31,12 @@ Everything below is stored in a SQLite database, per server.
 
 ## Logs and error reports
 
-- **Game event log.** The bot writes one line per game event (a run started, a level up, a gold change) to its log, for balancing the game. It carries the server id and a hunter code: a short one-way hash of your user id and server id, made with a secret salt only the operator knows. It is pseudonymous, not anonymous. Without the salt the log stays off. Feedback text is never written to it. The bot also logs how long every command and button response takes, with the same hunter code, to keep the bot responsive.
-- **Error reports.** When the bot hits an error, it can send the error and a short context message to an error-tracking service. Request data is removed, the bot's own secrets are scrubbed, and hunters appear only as the hash code. A report can still contain a server or channel id.
-- **Uptime monitor.** The bot pings an uptime monitor once a minute. The ping carries no player data.
+To keep the game balanced, working and secure, the bot keeps technical logs and error reports.
 
-The bot's container logs rotate on the server (about 30 MB, the oldest lines dropped) and are copied to the operator's own log server in Brazil, where they are kept for 30 days. The game event lines there carry the server id and the hashed hunter code. Error reports go to a Bugsink error tracker run by the operator on their own server in Brazil, and are deleted after 90 days.
+- **Game events.** One line per event (a run started, a level up, a gold change) and how long each command or button took to answer. They carry the server id and a pseudonymous code instead of your Discord id. Feedback text is never in them.
+- **Error reports.** When something breaks, the error and a short note are recorded. Request data and the bot's secrets are removed. A report can still contain a server or channel id.
+
+Logs and error reports stay on servers run by the operator in Brazil. Logs are kept 30 days and error reports 90 days.
 
 ## How long it is kept
 
@@ -43,28 +44,25 @@ The bot's container logs rotate on the server (about 30 MB, the oldest lines dro
 | --- | --- |
 | Feedback text | Deleted 30 days after it was written |
 | Everything else about a server | Until the server resets or deletes it, or removes the bot and 30 days pass |
-| Database snapshot on the server | One file, rewritten every 6 hours |
-| Backup copies | Up to about 6 months (7 daily, 4 weekly and 6 monthly copies), then they expire |
-| Container logs | About 30 MB on the server, then 30 days on the operator's log server |
-| Error reports | Deleted after 90 days |
-
-**Backups.** Once a day the bot's snapshot is copied to the operator's own backup server in Brazil, in an encrypted restic repository, which keeps 7 daily, 4 weekly and 6 monthly copies. This means data you delete from the game can stay in those backups for up to about 6 months, until the copies expire. Backups are used only to restore the service after a failure; they are not read for anything else. TODO(owner): whether a second copy of the backups also goes to Backblaze B2 cloud storage, and in which region.
+| Technical logs | 30 days |
+| Error reports | 90 days |
+| Backups | Each backup up to about 6 months |
 
 Ratings are not feedback text: they stay with the rest of your server's data until it is deleted.
+
+**Backups.** Encrypted backups of the game are kept on a server run by the operator in Brazil and with a cloud storage provider in the United States. They are used only to restore the service after a failure. Data you delete from the game can remain in backups for up to about 6 months, until they expire.
 
 ## Deleting your data
 
 - **A server admin** can open `/config`, then Data. **Reset progress** removes every hunter, item, run, portal, raid, the Forge and the Contracts, and keeps the settings. **Delete all data** removes all of that and the settings. Both ask you to type the server's name first.
 - **Removing the bot** from a server starts a 30-day countdown, after which all of that server's data is deleted. Adding the bot back within 30 days cancels it.
-- **A single player** can ask on the support server to have their data removed, in any server, and the operator will delete it by hand within 15 days. Ask on the support server or by email at tavinq@hotmail.com. Backups expire as described above. A built-in option for this is planned.
+- **A single player** can ask on the support server or by email at tavinq@hotmail.com to have their data removed, in any server. The operator deletes it by hand within 15 days. Backups expire as described above. A built-in option is planned.
 - **Private profile** only hides your build in `/inspect` and your item showcase. Your name, level and rank still show, and level-ups and raid results still mention you in public channels. Messages the bot already posted stay in the server's channels until a server admin deletes them.
-
-Whichever way you delete, copies in backups expire on their own schedule (see Backups above).
 
 ## Who else handles the data
 
-- **The server host.** The bot and its database run on a virtual private server (VPS) rented from Hostinger, located in Brazil.
-- **Error tracking, logs and backups.** Bugsink (error reports), Loki (logs) and restic (backups) all run on the operator's own servers in Brazil, not at a third-party company.
+- **Hosting.** The bot runs on a rented server in Brazil.
+- **Cloud backup.** A cloud storage provider in the United States holds the encrypted backup copies described above. This is an international transfer under LGPD Art. 33: the copy is encrypted before it leaves and the provider cannot read it; it is stored only for backup.
 - **Discord.** The bot works through Discord, which has its own privacy policy.
 
 No player data goes to an AI model or any language-model service. The bot never calls one while you play. The game's portals and items are written offline, ahead of time, and checked by a person.
