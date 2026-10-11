@@ -30,6 +30,7 @@ const ptBr = new URL(ptPath, base).href;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${base}/og.jpg`} />
     <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>document.documentElement.classList.add('js')</script>
   </head>
   <body><slot /></body>
 </html>

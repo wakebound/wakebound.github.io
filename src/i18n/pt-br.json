@@ -104,7 +104,7 @@
   "alt.rarity.epic": "Épico",
   "alt.shot.board": "O quadro de portais no Discord: três portais abertos de rank D, C e E, uma linha de incursão cooperativa e os botões Entrar 1, Entrar 2 e Entrar 3.",
   "alt.shot.warning": "Uma sala de combate no Discord: o Cavaleiro de Estilhaços arma um golpe pesado. A mensagem diz Golpe pesado vindo, Defender bloqueia tudo, e o botão Defender tem um sinal de alerta.",
-  "alt.shot.choice": "Depois da sala 3 de 5 o bot oferece dois botões: Descer mais fundo, ou Sair com o espólio.",
+  "alt.shot.choice": "Depois da sala 3 de 5 o bot oferece Descer mais fundo ou Sair com o espólio, além de um botão de Poção.",
   "alt.shot.cleared": "A mensagem de portal concluído no Discord, com o XP, o ouro e o minério da Forja que a incursão pagou.",
-  "alt.shot.raid": "Um cartão de incursão no Discord com a barra de vida do chefe, as alavancas ativas e os botões Atacar e Alavanca de classe."
+  "run.enlarge": "Toque para ampliar"
 }
