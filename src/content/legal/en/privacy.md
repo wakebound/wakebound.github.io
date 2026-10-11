@@ -11,17 +11,17 @@ Wakebound is run by Otavio Augusto Soares, an individual, who is the controller 
 
 ## Data we collect
 
-The bot reads only what Discord sends when someone uses a command or a button. It does not read the content of messages in your channels, and it does not collect usernames, avatars, emails, IP addresses or direct messages. What it keeps, per server:
+The bot reads only what Discord sends when someone uses a command or a button. It does not read the content of messages in your channels, and it does not store usernames, avatars, emails, IP addresses or direct messages. What it keeps, per server:
 
 - **Server:** its id, language and timezone, the channels and admin role chosen in setup, the ids of the bot's own messages, its settings, the date the bot was removed (if it was), and the portal, raid, Server Forge and Contract history.
 - **Player:** your Discord user id, which is the only thing that ties the data to you, and your hunter: class, level, XP, gold, potions, energy, HP, talents, title, injuries and other timers, tips seen, tutorial progress and whether your profile is private.
 - **Activity:** items, materials, expeditions, titles, runs and their state, raid actions, Forge donations and Contract deliveries, and when each happened (for example start, end, earn and donation times).
 - **Feedback:** a rating (fun, meh or unfair) for a run and, if you use the Feedback button, the text you write.
-- **Technical data:** which command or button was used and how long it took to answer, logged with the server id and a pseudonymous code instead of your Discord id, and error reports, which can contain a server or channel id.
+- **Technical data:** which command or button was used and how long it took, plus game events (runs, level-ups, gold and item changes, ratings), logged with the server id and a pseudonymous code instead of your Discord id. Error reports can include that code and a server or channel id.
 
 ## Why we use it
 
-- To run the game you chose to play: LGPD Art. 7, V (performance of a service).
+- To run the game you chose to play: LGPD Art. 7, V (performance of a contract, these Terms).
 - To keep the bot working, balanced and secure, by reading logs and error reports: LGPD Art. 7, IX (legitimate interest).
 
 ## Sharing
@@ -30,7 +30,7 @@ We use Discord, which is the platform the bot runs on and has its own privacy po
 
 ## International transfers
 
-An encrypted backup copy is stored outside Brazil with a cloud storage provider bound by contract to use it only for storage. The copy is encrypted before it leaves, and the provider cannot read it (LGPD Art. 33).
+An encrypted backup copy is stored with a cloud storage provider outside Brazil. It is encrypted before upload, so the provider cannot read it, and it is used only to restore the service.
 
 ## How long we keep it
 
@@ -41,7 +41,7 @@ An encrypted backup copy is stored outside Brazil with a cloud storage provider 
 
 ## Your rights
 
-Under LGPD Art. 18 you can ask us to confirm that we process your data, give you access to it, correct it, anonymize, block or delete unnecessary data, give it to you in a portable format, tell you who it is shared with, and delete it. Ask by email or on the support server. We answer within 15 days. If you are not satisfied, you can complain to the ANPD (Autoridade Nacional de Proteção de Dados).
+Under LGPD Art. 18 you can ask us to confirm that we process your data, give you access to it, correct it, anonymize, block or delete unnecessary data, give it to you in a portable format, tell you who it is shared with, delete it, and object to processing based on legitimate interest. Ask by email or on the support server. We answer within 15 days. If you are not satisfied, you can complain to the ANPD (Autoridade Nacional de Proteção de Dados).
 
 ## Deleting your data
 
@@ -49,15 +49,15 @@ Under LGPD Art. 18 you can ask us to confirm that we process your data, give you
 - **Removing the bot** from a server deletes its data after 30 days.
 - **A single player** can ask on the support server or by email to have their data removed, in any server. We do it by hand within 15 days. An in-game option is planned.
 - Messages the bot already posted stay in the server's channels until a server admin deletes them.
-- **Private profile** only hides your build in `/inspect` and your item showcase. Your name, level and rank still show, and level-ups and raid results still mention you in public channels.
+- **Private profile** hides your build in `/inspect` and your item showcase, and shows you as "A hunter" in fall traces. Your name, level and rank still show, and level-ups and raid results still mention you in public channels.
 
 ## Security
 
-Access to the data is limited to the operator, and backups are encrypted. No system is perfectly secure, so we cannot promise absolute protection.
+Access to the data is limited to the operator, and backups are encrypted. If a breach affects your data, we will tell you and the ANPD. No system is perfectly secure, so we cannot promise absolute protection.
 
 ## Children
 
-Wakebound is not for anyone under Discord's minimum age (13, higher in some countries).
+Wakebound is not for anyone under Discord's minimum age (13, higher in some countries). Parents or guardians can ask us to delete a minor's data.
 
 ## Changes
 

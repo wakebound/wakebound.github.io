@@ -11,7 +11,7 @@ You must be old enough to use Discord (13 or your country's minimum age). If you
 
 ## The service
 
-Wakebound is a free Discord game of portals, solo runs and cooperative raids. It sells nothing and asks for no payment. Characters, places and stories are fiction. Items, gold, levels and other progress are virtual: they have no value outside the game and cannot be traded for money. The game, its rules and its content can change at any time, and the service can be paused or shut down, with or without notice.
+Wakebound is a free Discord game of portals, solo runs and cooperative raids. It sells nothing and asks for no payment. Characters, places and stories are fiction. Items, gold, levels and other progress are virtual: they have no value outside the game and cannot be traded for money. The game, its rules and its content can change at any time, and the service can be paused or shut down, with or without notice. If the service ends, its data is deleted.
 
 ## Acceptable use
 

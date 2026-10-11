@@ -11,7 +11,7 @@ Você precisa ter idade para usar o Discord (13 anos ou a idade mínima do seu p
 
 ## O serviço
 
-O Wakebound é um jogo gratuito de Discord com portais, runs solo e raids cooperativas. Ele não vende nada e não pede pagamento. Personagens, lugares e histórias são ficção. Itens, ouro, níveis e demais progressos são virtuais: não valem nada fora do jogo e não podem ser trocados por dinheiro. O jogo, suas regras e seu conteúdo podem mudar a qualquer momento, e o serviço pode ser pausado ou encerrado, com ou sem aviso.
+O Wakebound é um jogo gratuito de Discord com portais, runs solo e raids cooperativas. Ele não vende nada e não pede pagamento. Personagens, lugares e histórias são ficção. Itens, ouro, níveis e demais progressos são virtuais: não valem nada fora do jogo e não podem ser trocados por dinheiro. O jogo, suas regras e seu conteúdo podem mudar a qualquer momento, e o serviço pode ser pausado ou encerrado, com ou sem aviso. Se o serviço acabar, os dados dele são apagados.
 
 ## Uso aceitável
 

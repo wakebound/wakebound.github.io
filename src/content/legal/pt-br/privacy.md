@@ -11,17 +11,17 @@ O Wakebound é operado por Otavio Augusto Soares, pessoa física, que é o contr
 
 ## Dados que coletamos
 
-O bot lê só o que o Discord envia quando alguém usa um comando ou um botão. Ele não lê o conteúdo das mensagens dos seus canais e não coleta nomes de usuário, avatares, e-mails, endereços IP nem mensagens diretas. O que ele guarda, por servidor:
+O bot lê só o que o Discord envia quando alguém usa um comando ou um botão. Ele não lê o conteúdo das mensagens dos seus canais e não guarda nomes de usuário, avatares, e-mails, endereços IP nem mensagens diretas. O que ele guarda, por servidor:
 
 - **Servidor:** o id, o idioma e o fuso horário, os canais e o cargo de admin escolhidos na configuração, os ids das mensagens do próprio bot, as configurações, a data em que o bot foi removido (se foi) e o histórico de portais, raids, Forja do Servidor e Contratos.
 - **Jogador:** o seu id de usuário do Discord, a única coisa que liga os dados a você, e o seu caçador: classe, nível, XP, ouro, poções, energia, HP, talentos, título, lesões e outros temporizadores, dicas vistas, progresso do tutorial e se o perfil é privado.
 - **Atividade:** itens, materiais, expedições, títulos, runs e o estado delas, ações em raids, doações à Forja e entregas de Contratos, e quando cada coisa aconteceu (por exemplo, horários de início, fim, conquista e doação).
 - **Feedback:** uma avaliação (divertido, mais ou menos ou injusto) de uma run e, se você usar o botão Feedback, o texto que escrever.
-- **Dados técnicos:** qual comando ou botão foi usado e quanto tempo levou para responder, registrados com o id do servidor e um código pseudônimo no lugar do seu id do Discord, e relatórios de erro, que podem conter o id de um servidor ou canal.
+- **Dados técnicos:** qual comando ou botão foi usado e quanto tempo levou, mais eventos do jogo (runs, subidas de nível, mudanças de ouro e itens, avaliações), registrados com o id do servidor e um código pseudônimo no lugar do seu id do Discord. Relatórios de erro podem incluir esse código e o id de um servidor ou canal.
 
 ## Por que usamos
 
-- Para fazer funcionar o jogo que você escolheu jogar: LGPD, art. 7º, V (execução de serviço).
+- Para fazer funcionar o jogo que você escolheu jogar: LGPD, art. 7º, V (execução de contrato, os Termos de Uso).
 - Para manter o bot funcionando, equilibrado e seguro, lendo logs e relatórios de erro: LGPD, art. 7º, IX (legítimo interesse).
 
 ## Compartilhamento
@@ -30,7 +30,7 @@ Usamos o Discord, a plataforma em que o bot roda e que tem a própria política 
 
 ## Transferência internacional
 
-Uma cópia criptografada de backup é guardada fora do Brasil, num provedor de armazenamento em nuvem obrigado por contrato a usá-la apenas para guardar. A cópia é criptografada antes de sair e o provedor não consegue lê-la (LGPD, art. 33).
+Uma cópia criptografada de backup é guardada num provedor de armazenamento em nuvem fora do Brasil. Ela é criptografada antes do envio, então o provedor não consegue lê-la, e é usada só para restaurar o serviço.
 
 ## Por quanto tempo guardamos
 
@@ -41,7 +41,7 @@ Uma cópia criptografada de backup é guardada fora do Brasil, num provedor de a
 
 ## Seus direitos
 
-Pelo art. 18 da LGPD você pode pedir que confirmemos que tratamos seus dados, dar acesso a eles, corrigi-los, anonimizar, bloquear ou eliminar dados desnecessários, entregá-los em formato portável, informar com quem são compartilhados e apagá-los. Peça por e-mail ou no servidor de suporte. Respondemos em até 15 dias. Se não ficar satisfeito, você pode reclamar à ANPD (Autoridade Nacional de Proteção de Dados).
+Pelo art. 18 da LGPD você pode pedir que confirmemos que tratamos seus dados, dar acesso a eles, corrigi-los, anonimizar, bloquear ou eliminar dados desnecessários, entregá-los em formato portável, informar com quem são compartilhados apagá-los e se opor ao tratamento baseado em legítimo interesse. Peça por e-mail ou no servidor de suporte. Respondemos em até 15 dias. Se não ficar satisfeito, você pode reclamar à ANPD (Autoridade Nacional de Proteção de Dados).
 
 ## Como apagar seus dados
 
@@ -49,15 +49,15 @@ Pelo art. 18 da LGPD você pode pedir que confirmemos que tratamos seus dados, d
 - **Remover o bot** de um servidor apaga os dados dele depois de 30 dias.
 - **Um jogador sozinho** pode pedir no servidor de suporte ou por e-mail para ter seus dados removidos, em qualquer servidor. Fazemos à mão em até 15 dias. Uma opção dentro do jogo está planejada.
 - Mensagens que o bot já publicou ficam nos canais do servidor até um admin do servidor apagá-las.
-- **Perfil privado** só esconde a sua build no `/inspecionar` e a vitrine de itens. Seu nome, nível e rank continuam aparecendo, e subidas de nível e resultados de raid ainda mencionam você em canais públicos.
+- **Perfil privado** esconde a sua build no `/inspecionar` e a vitrine de itens, e mostra você como "Um caçador" nos rastros de queda. Seu nome, nível e rank continuam aparecendo, e subidas de nível e resultados de raid ainda mencionam você em canais públicos.
 
 ## Segurança
 
-O acesso aos dados é limitado ao operador e os backups são criptografados. Nenhum sistema é perfeitamente seguro, então não prometemos proteção absoluta.
+O acesso aos dados é limitado ao operador e os backups são criptografados. Se uma violação afetar seus dados, avisaremos você e a ANPD. Nenhum sistema é perfeitamente seguro, então não prometemos proteção absoluta.
 
 ## Crianças
 
-O Wakebound não é para quem tem menos que a idade mínima do Discord (13 anos, mais em alguns países).
+O Wakebound não é para quem tem menos que a idade mínima do Discord (13 anos, mais em alguns países). Pais ou responsáveis podem pedir que apaguemos os dados de um menor.
 
 ## Mudanças
 
