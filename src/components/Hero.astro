@@ -8,7 +8,7 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 const background = await getImage({ src: banner, format: 'webp', width: 1920 });
 ---
-<header class="hero" style={`--hero-bg:url(${background.src})`}><div class="wrap">
+<header class="hero" style={`--hero-bg:url("${background.src}")`}><div class="wrap">
   <p class="sysline" data-typing>{t(locale, 'hero.system')}</p>
   <h1>Wakebound</h1>
   <p class="what">{t(locale, 'hero.what')}</p>
