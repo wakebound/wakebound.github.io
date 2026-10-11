@@ -1,4 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Landing from '../../components/Landing.astro';
+import { t } from '../../i18n/t.ts';
 ---
-<Base locale="pt-br" title="Wakebound" description="Um RPG sombrio dentro do Discord." path="/"><main>Wakebound</main></Base>
+<Base locale="pt-br" title={t('pt-br', 'meta.title')} description={t('pt-br', 'meta.description')} path="/"><Landing locale="pt-br" /></Base>

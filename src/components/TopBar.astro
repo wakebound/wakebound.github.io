@@ -1,0 +1,30 @@
+---
+import { t, type Locale } from '../i18n/t.ts';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<div class="top"><div class="wrap"><div class="bar">
+  <div class="mark">Wakebound</div>
+  <nav aria-label={t(locale, 'nav.main')}>
+    <a class="hide-sm" href="#run">{t(locale, 'nav.howItPlays')}</a>
+    <a class="hide-sm" href="#classes">{t(locale, 'nav.classes')}</a>
+    <a class="hide-sm" href="#world">{t(locale, 'nav.world')}</a>
+    <span class="lang">
+      <a href="/" lang="en" aria-current={locale === 'en' ? 'true' : undefined}>{t(locale, 'lang.en')}</a>
+      <a href="/pt-br/" lang="pt-BR" aria-current={locale === 'pt-br' ? 'true' : undefined}>{t(locale, 'lang.ptBr')}</a>
+    </span>
+  </nav>
+</div></div></div>
+
+<style>
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  .top{position:absolute;left:0;right:0;z-index:5;padding-top:14px}
+  .top .bar{display:flex;justify-content:space-between;align-items:center;background:rgba(12,8,9,.55);backdrop-filter:blur(8px);border:1px solid rgba(239,230,218,.12);padding:10px 18px}
+  .mark{font:800 24px/1 var(--display)}
+  .top nav{display:flex;gap:22px;align-items:center;font-size:17px}
+  .top nav a{text-decoration:none}
+  .lang a{padding:3px 8px;border:1px solid var(--edge);font-size:16px;text-decoration:none}
+  .lang a[aria-current]{background:var(--bone);color:var(--void)}
+  @media (max-width:760px){.top nav .hide-sm{display:none}}
+</style>

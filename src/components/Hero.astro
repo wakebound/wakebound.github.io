@@ -1,0 +1,54 @@
+---
+import { getImage } from 'astro:assets';
+import banner from '../assets/art/banner_raid_void.webp';
+import { t, type Locale } from '../i18n/t.ts';
+import { BOT_INVITE, SUPPORT_INVITE } from './links.ts';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const background = await getImage({ src: banner, format: 'webp', width: 1920 });
+---
+<header class="hero" style={`--hero-bg:url(${background.src})`}><div class="wrap">
+  <p class="sysline" data-typing>{t(locale, 'hero.system')}</p>
+  <h1>Wakebound</h1>
+  <p class="what">{t(locale, 'hero.what')}</p>
+  <div class="acts"><a class="btn" href={BOT_INVITE}>{t(locale, 'hero.add')}</a><a class="ghost" href={SUPPORT_INVITE}>{t(locale, 'hero.support')}</a></div>
+  <p class="trust">{t(locale, 'hero.trust')}</p>
+</div></header>
+
+<script>
+  const line = document.querySelector<HTMLElement>('[data-typing]');
+  if (line && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const full = line.textContent ?? '';
+    line.textContent = '';
+    line.classList.add('cursor');
+    let shown = 0;
+    const tick = (): void => {
+      shown += 1;
+      line.textContent = full.slice(0, shown);
+      if (shown < full.length) setTimeout(tick, 32);
+      else setTimeout(() => line.classList.remove('cursor'), 1200);
+    };
+    tick();
+  }
+</script>
+
+<style>
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  .btn{position:relative;display:inline-block;padding:16px 34px;font:700 19px var(--body);text-decoration:none;color:#fff;background:linear-gradient(180deg,#d32542,#9c1530);border:1px solid #e0566c;box-shadow:0 18px 40px -14px rgba(196,30,58,.9)}
+  .btn::before,.btn::after{content:"";position:absolute;width:12px;height:12px;border:2px solid var(--bone)}
+  .btn::before{left:-6px;top:-6px;border-right:0;border-bottom:0}
+  .btn::after{right:-6px;bottom:-6px;border-left:0;border-top:0}
+  .btn:hover{background:linear-gradient(180deg,#e02c4a,#a8183a)}
+  .ghost{font-size:18px;text-underline-offset:4px}
+  .hero{position:relative;isolation:isolate;min-height:100vh;display:grid;place-items:center;text-align:center;padding:120px 0 80px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--hero-bg) center 30%/cover}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 70% 60% at 50% 45%,rgba(12,8,9,.25),rgba(12,8,9,.9)),linear-gradient(180deg,transparent 65%,var(--void))}
+  .sysline{font:clamp(16px,1.6vw,18px)/1.6 var(--sys);color:var(--ice);min-height:1.6em}
+  h1{font:800 clamp(72px,13vw,176px)/.85 var(--display);letter-spacing:-.02em;margin:18px 0 10px;text-shadow:0 6px 60px rgba(196,30,58,.6)}
+  .what{font-size:clamp(20px,2.2vw,24px);max-width:34ch;margin:0 auto}
+  .acts{display:flex;flex-wrap:wrap;gap:22px 30px;justify-content:center;align-items:center;margin-top:36px}
+  .trust{margin-top:22px;color:var(--ash);font-size:16px}
+  .sysline.cursor::after{content:"▌";animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+</style>
