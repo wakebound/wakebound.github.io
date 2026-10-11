@@ -8,7 +8,9 @@ async function waitForServer() {
   const deadline = Date.now() + 15000;
   while (Date.now() < deadline) {
     try {
-      if ((await fetch(origin)).status === 200) return;
+      if ((await fetch(origin)).status === 200) {
+        return;
+      }
     } catch {}
     await new Promise((resolve) => setTimeout(resolve, 200));
   }
@@ -28,20 +30,30 @@ try {
       const page = await browser.newPage({ viewport: { width, height }, javaScriptEnabled: js });
       page.on('request', (request) => {
         const url = request.url();
-        if (!url.startsWith(origin) && !url.startsWith('data:')) problems.push(`${label}: third-party request ${url}`);
+        const isSameOrigin = url.startsWith(origin);
+        const isDataUrl = url.startsWith('data:');
+        if (!isSameOrigin && !isDataUrl) {
+          problems.push(`${label}: third-party request ${url}`);
+        }
       });
       page.on('requestfailed', (request) => {
-        if (request.url().startsWith(origin)) problems.push(`${label}: request failed ${request.url()}`);
+        if (request.url().startsWith(origin)) {
+          problems.push(`${label}: request failed ${request.url()}`);
+        }
       });
       page.on('response', (response) => {
-        if (response.status() >= 400) problems.push(`${label}: HTTP ${response.status()} ${response.url()}`);
+        if (response.status() >= 400) {
+          problems.push(`${label}: HTTP ${response.status()} ${response.url()}`);
+        }
       });
       await page.goto(origin + path, { waitUntil: 'networkidle' });
       const result = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth - window.innerWidth,
         broken: [...document.images].filter((image) => image.complete && image.naturalWidth === 0).map((image) => image.getAttribute('src')),
       }));
-      if (result.overflow > 0) problems.push(`${label}: horizontal overflow ${result.overflow}px`);
+      if (result.overflow > 0) {
+        problems.push(`${label}: horizontal overflow ${result.overflow}px`);
+      }
       for (const src of result.broken) problems.push(`${label}: broken image ${src}`);
       await page.close();
     }

@@ -6,7 +6,9 @@ interface Props { locale: Locale; name: 'board' | 'warning' | 'choice' | 'cleare
 const { locale, name, alt, enlarge } = Astro.props;
 const shots = import.meta.glob<{ default: ImageMetadata }>('../assets/shots/*/*.png', { eager: true });
 const shot = shots[`../assets/shots/${locale}/${name}.png`];
-if (!shot) throw new Error(`missing Discord shot ${locale}/${name}`);
+if (!shot) {
+  throw new Error(`missing Discord shot ${locale}/${name}`);
+}
 const width = Math.min(shot.default.width, 1000);
 const full = enlarge ? await getImage({ src: shot.default, format: 'webp', width: shot.default.width }) : undefined;
 ---

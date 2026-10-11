@@ -26,8 +26,11 @@ const background = await getImage({ src: banner, format: 'webp', width: 1920 });
     const tick = (): void => {
       shown += 1;
       line.textContent = full.slice(0, shown);
-      if (shown < full.length) setTimeout(tick, 32);
-      else setTimeout(() => line.classList.remove('cursor'), 1200);
+      if (shown < full.length) {
+        setTimeout(tick, 32);
+      } else {
+        setTimeout(() => line.classList.remove('cursor'), 1200);
+      }
     };
     tick();
   }

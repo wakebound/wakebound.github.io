@@ -35,7 +35,11 @@ const steps = [
   const steps = document.querySelectorAll<HTMLElement>('[data-step]:not([data-stage])');
   if (stage) {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => { if (entry.isIntersecting) stage.dataset.step = entry.target.getAttribute('data-step') ?? '1'; }),
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          stage.dataset.step = entry.target.getAttribute('data-step') ?? '1';
+        }
+      }),
       { rootMargin: '-45% 0px -45% 0px' },
     );
     steps.forEach((step) => observer.observe(step));

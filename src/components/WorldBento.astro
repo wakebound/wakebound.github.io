@@ -22,7 +22,9 @@ const FOES = [['brute', brute], ['agile', agile], ['caster', caster], ['swarm', 
 const pictures = import.meta.glob<{ default: ImageMetadata }>('../assets/catalog/*', { eager: true });
 const picture = (filename: string): ImageMetadata => {
   const found = pictures[`../assets/catalog/${filename}`];
-  if (!found) throw new Error(`catalog picture missing: src/assets/catalog/${filename}`);
+  if (!found) {
+    throw new Error(`catalog picture missing: src/assets/catalog/${filename}`);
+  }
   return found.default;
 };
 
