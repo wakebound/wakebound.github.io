@@ -33,7 +33,7 @@ const classes = [
         <p class="cls-role">{t(locale, `class.${id}.role`)}</p>
         <dl class="kit">
           <div><dt>{t(locale, 'classes.skill')}</dt><dd><b>{t(locale, `class.${id}.skill`)}</b>{t(locale, `class.${id}.skillDesc`)}</dd></div>
-          <div><dt>{t(locale, 'classes.inRaids')}</dt><dd><b>{t(locale, `class.${id}.lever`)}</b>{t(locale, `class.${id}.leverDesc`)} {leverText[id]}</dd></div>
+          <div><dt>{t(locale, 'classes.inRaids')}</dt><dd><b>{t(locale, `class.${id}.lever`)}</b>: {leverText[id]}</dd></div>
         </dl>
       </div>
     </article>
@@ -60,7 +60,7 @@ const classes = [
   .classes{background:radial-gradient(ellipse at 30% 40%,#3a0f18,var(--oxblood) 60%,#1a070b);padding:110px 0}
   .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
   .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;align-items:end}
-  .sysline{grid-column:2;grid-row:1;font:15px/1.6 var(--sys);color:var(--ice)}
+  .sysline{grid-column:2;grid-row:1;font:16px/1.6 var(--sys);color:var(--ice)}
   .panel{display:contents}
   .portrait{grid-column:1;grid-row:1/4;align-self:center}
   .text{grid-column:2;grid-row:2;align-self:start}
@@ -79,6 +79,7 @@ const classes = [
   .picker button[aria-pressed="true"] img,.picker button:hover img{filter:none;border-color:var(--bone)}
   .picker button[aria-pressed="true"]{color:var(--bone)}
   .picker button:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){.picker button img{transition:none}}
   @media (max-width:900px){
     .grid{grid-template-columns:minmax(0,1fr);row-gap:20px}
     .sysline,.portrait,.text,.picker{grid-column:1;grid-row:auto}
