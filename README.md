@@ -34,7 +34,7 @@ The site is available in English at [`/`](https://wakebound.github.io) and Brazi
 
 ## Development
 
-Requires Node 24.
+Requires Node 24 (see `.nvmrc`).
 
 ```sh
 npm ci
