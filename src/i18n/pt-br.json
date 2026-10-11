@@ -62,9 +62,6 @@
   "world.foes.title": "Cinco tipos de inimigo",
   "world.foes.body": "Brutamontes armam o golpe, conjuradores acumulam poder, chefes entram em fúria quando feridos.",
   "world.loot.title": "Itens com efeitos",
-  "world.loot.itemName": "Adaga Sussurro",
-  "world.loot.itemMeta": "Arma rara",
-  "world.loot.itemQuote": "A lâmina não faz som ao sair da bainha, nem ao abrir uma ferida.",
   "world.forge.title": "A Forja do servidor",
   "world.forge.body": "Todos alimentam. Cada nível paga todo caçador a cada vitória.",
   "world.scenes.title": "Oito mundos sombrios",
@@ -103,8 +100,5 @@
   "alt.rarity.common": "Comum",
   "alt.rarity.uncommon": "Incomum",
   "alt.rarity.rare": "Raro",
-  "alt.rarity.epic": "Épico",
-  "alt.forge": "A oficina da Forja do servidor",
-  "alt.sceneIce": "Um mundo de gelo",
-  "alt.sceneVolcano": "Um mundo de vulcões"
+  "alt.rarity.epic": "Épico"
 }

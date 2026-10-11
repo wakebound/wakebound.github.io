@@ -62,9 +62,6 @@
   "world.foes.title": "Five kinds of foe",
   "world.foes.body": "Brutes wind up, casters build power, bosses enrage when hurt.",
   "world.loot.title": "Loot with effects",
-  "world.loot.itemName": "Whisper Dagger",
-  "world.loot.itemMeta": "Rare weapon",
-  "world.loot.itemQuote": "The blade makes no sound leaving its sheath, or a wound.",
   "world.forge.title": "The server Forge",
   "world.forge.body": "Everyone feeds it. Each level pays every hunter on every win.",
   "world.scenes.title": "Eight dark worlds",
@@ -103,8 +100,5 @@
   "alt.rarity.common": "Common",
   "alt.rarity.uncommon": "Uncommon",
   "alt.rarity.rare": "Rare",
-  "alt.rarity.epic": "Epic",
-  "alt.forge": "The server Forge workshop",
-  "alt.sceneIce": "An ice world",
-  "alt.sceneVolcano": "A volcano world"
+  "alt.rarity.epic": "Epic"
 }

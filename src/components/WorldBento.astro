@@ -26,9 +26,10 @@ const picture = (filename: string): ImageMetadata => {
   return found.default;
 };
 
-const portals = (await getCollection('portals')).filter((entry) => entry.data.locale === locale);
+const rowId = (entry: { id: string }): number => Number(entry.id.slice(entry.id.lastIndexOf('-') + 1));
+const portals = (await getCollection('portals')).filter((entry) => entry.data.locale === locale).sort((a, b) => rowId(a) - rowId(b));
 const ladder = RANKS.map((rank) => ({ rank, portal: portals.find((entry) => entry.data.rank === rank)?.data ?? null }));
-const item = (await getCollection('items')).find((entry) => entry.data.locale === locale)?.data ?? null;
+const item = (await getCollection('items')).filter((entry) => entry.data.locale === locale).sort((a, b) => rowId(a) - rowId(b))[0]?.data ?? null;
 ---
 <section class="world" id="world"><div class="wrap">
   <h2>{t(locale, 'world.title')}</h2>
@@ -66,7 +67,7 @@ const item = (await getCollection('items')).find((entry) => entry.data.locale ==
     <div class="cell c-loot">
       {item && (
         <div class="item">
-          <Image src={picture(item.image)} alt={item.name} width={96} height={96} densities={[1, 2]} />
+          <Image src={picture(item.image)} alt="" width={96} height={96} densities={[1, 2]} />
           <div><b>{item.name}</b><q>{item.description}</q></div>
         </div>
       )}
@@ -116,7 +117,7 @@ const item = (await getCollection('items')).find((entry) => entry.data.locale ==
   .foes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:auto}
   .foes img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--edge)}
   .c-foes h3{margin-top:14px}
-  .c-loot .item{display:flex;gap:12px;align-items:center;border-top:3px solid var(--rare);background:#100b0b;padding:12px;margin-bottom:auto}
+  .c-loot .item{display:flex;flex-direction:column;gap:12px;align-items:flex-start;border-top:3px solid var(--rare);background:#100b0b;padding:12px;margin-bottom:auto}
   .c-loot .item img{width:64px;height:64px;object-fit:cover;flex:none}
   .c-loot .item b{font:700 20px var(--display);display:block}
   .c-loot .item q{display:block;color:var(--ash);font-style:italic;font-size:16px;margin-top:4px;quotes:none}

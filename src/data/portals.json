@@ -9,7 +9,7 @@
       "hook": "A green rift opened under the tavern. Something down there is eating the cheese.",
       "scene": "sewer",
       "boss": null,
-      "image": "catalog-1.webp"
+      "image": "banner_scene_sewer.webp"
     },
     {
       "id": 2,
@@ -20,7 +20,7 @@
       "hook": "Smoke rises from a rift on the old hill road. Goblins have built a tower of junk.",
       "scene": "ruins",
       "boss": null,
-      "image": "catalog-2.webp"
+      "image": "banner_scene_ruins.webp"
     },
     {
       "id": 3,
@@ -31,7 +31,7 @@
       "hook": "The bells of an abandoned chapel ring at midnight. No one has pulled the rope in years.",
       "scene": "crypt",
       "boss": null,
-      "image": "catalog-3.webp"
+      "image": "banner_scene_crypt.webp"
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "hook": "A hedge maze grew overnight around the miller's house. The miller has not come out.",
       "scene": "forest",
       "boss": null,
-      "image": "catalog-4.webp"
+      "image": "banner_scene_forest.webp"
     },
     {
       "id": 5,
@@ -53,7 +53,7 @@
       "hook": "A library sank into the marsh centuries ago. Its lamps have just been lit again.",
       "scene": "ruins",
       "boss": null,
-      "image": "catalog-5.webp"
+      "image": "banner_scene_ruins.webp"
     },
     {
       "id": 6,
@@ -64,7 +64,7 @@
       "hook": "A dwarven forge woke up beneath the mountain. Its hammers strike with no hands.",
       "scene": "volcano",
       "boss": null,
-      "image": "catalog-6.webp"
+      "image": "banner_scene_volcano.webp"
     },
     {
       "id": 7,
@@ -75,7 +75,7 @@
       "hook": "A rift split the floor of the old salt mine. The night shift never came back up.",
       "scene": "cave",
       "boss": null,
-      "image": "catalog-7.webp"
+      "image": "banner_scene_cave.webp"
     },
     {
       "id": 8,
@@ -86,7 +86,7 @@
       "hook": "An orchard appeared on the cliff at dusk. Its apples glow, and the scarecrows have started walking.",
       "scene": "forest",
       "boss": null,
-      "image": "catalog-8.webp"
+      "image": "banner_scene_forest.webp"
     },
     {
       "id": 9,
@@ -97,7 +97,7 @@
       "hook": "A fortress of black glass grew out of the desert in one night. It reflects a sky that is not ours.",
       "scene": "void",
       "boss": null,
-      "image": "catalog-9.webp"
+      "image": "banner_scene_void.webp"
     },
     {
       "id": 10,
@@ -108,7 +108,7 @@
       "hook": "Lightning has struck the same ruined keep every night for a week. Tonight the gates stand open.",
       "scene": "ruins",
       "boss": null,
-      "image": "catalog-10.webp"
+      "image": "banner_scene_ruins.webp"
     },
     {
       "id": 11,
@@ -119,7 +119,7 @@
       "hook": "A spiral stair opened in the town square. Those who counted the steps stopped at nine hundred.",
       "scene": "void",
       "boss": null,
-      "image": "catalog-11.webp"
+      "image": "banner_scene_void.webp"
     },
     {
       "id": 12,
@@ -130,7 +130,7 @@
       "hook": "A red rift tears the sky above the village. Ash falls like snow.",
       "scene": "volcano",
       "boss": "The Ashen Wyrm",
-      "image": "catalog-12.webp"
+      "image": "banner_raid_volcano.webp"
     },
     {
       "id": 13,
@@ -141,7 +141,7 @@
       "hook": "The lake drained in one night. Something enormous stands up in the mud.",
       "scene": "ruins",
       "boss": "The Drowned Colossus",
-      "image": "catalog-13.webp"
+      "image": "banner_raid_ruins.webp"
     }
   ],
   "pt-br": [
@@ -154,7 +154,7 @@
       "hook": "Uma fenda verde abriu embaixo da taverna. Alguma coisa lá embaixo está comendo o queijo.",
       "scene": "sewer",
       "boss": null,
-      "image": "catalog-26.webp"
+      "image": "banner_scene_sewer.webp"
     },
     {
       "id": 27,
@@ -165,7 +165,7 @@
       "hook": "Fumaça sobe de uma fenda na velha estrada do morro. Goblins ergueram uma torre de sucata.",
       "scene": "ruins",
       "boss": null,
-      "image": "catalog-27.webp"
+      "image": "banner_scene_ruins.webp"
     },
     {
       "id": 28,
@@ -176,7 +176,7 @@
       "hook": "Os sinos de uma capela abandonada tocam à meia-noite. Ninguém puxa a corda há anos.",
       "scene": "crypt",
       "boss": null,
-      "image": "catalog-28.webp"
+      "image": "banner_scene_crypt.webp"
     },
     {
       "id": 29,
@@ -187,7 +187,7 @@
       "hook": "Um labirinto de sebes cresceu numa noite em volta da casa do moleiro. O moleiro não saiu mais.",
       "scene": "forest",
       "boss": null,
-      "image": "catalog-29.webp"
+      "image": "banner_scene_forest.webp"
     },
     {
       "id": 30,
@@ -198,7 +198,7 @@
       "hook": "Uma biblioteca afundou no pântano há séculos. Suas lamparinas acabaram de se acender de novo.",
       "scene": "ruins",
       "boss": null,
-      "image": "catalog-30.webp"
+      "image": "banner_scene_ruins.webp"
     },
     {
       "id": 31,
@@ -209,7 +209,7 @@
       "hook": "Uma forja anã despertou sob a montanha. Seus martelos batem sem mãos.",
       "scene": "volcano",
       "boss": null,
-      "image": "catalog-31.webp"
+      "image": "banner_scene_volcano.webp"
     },
     {
       "id": 32,
@@ -220,7 +220,7 @@
       "hook": "Uma fenda rasgou o chão da velha mina de sal. O turno da noite nunca voltou à superfície.",
       "scene": "cave",
       "boss": null,
-      "image": "catalog-32.webp"
+      "image": "banner_scene_cave.webp"
     },
     {
       "id": 33,
@@ -231,7 +231,7 @@
       "hook": "Um pomar surgiu no penhasco ao anoitecer. As maçãs brilham, e os espantalhos começaram a andar.",
       "scene": "forest",
       "boss": null,
-      "image": "catalog-33.webp"
+      "image": "banner_scene_forest.webp"
     },
     {
       "id": 34,
@@ -242,7 +242,7 @@
       "hook": "Uma fortaleza de vidro negro brotou do deserto numa só noite. Ela reflete um céu que não é o nosso.",
       "scene": "void",
       "boss": null,
-      "image": "catalog-34.webp"
+      "image": "banner_scene_void.webp"
     },
     {
       "id": 35,
@@ -253,7 +253,7 @@
       "hook": "Um raio atinge a mesma fortaleza em ruínas toda noite há uma semana. Hoje os portões estão abertos.",
       "scene": "ruins",
       "boss": null,
-      "image": "catalog-35.webp"
+      "image": "banner_scene_ruins.webp"
     },
     {
       "id": 36,
@@ -264,7 +264,7 @@
       "hook": "Uma escada em espiral se abriu na praça da cidade. Quem contou os degraus parou nos novecentos.",
       "scene": "void",
       "boss": null,
-      "image": "catalog-36.webp"
+      "image": "banner_scene_void.webp"
     },
     {
       "id": 37,
@@ -275,7 +275,7 @@
       "hook": "Uma fenda vermelha rasga o céu sobre a vila. Cinzas caem como neve.",
       "scene": "volcano",
       "boss": "A Serpe de Cinzas",
-      "image": "catalog-37.webp"
+      "image": "banner_raid_volcano.webp"
     },
     {
       "id": 38,
@@ -286,7 +286,7 @@
       "hook": "O lago secou numa só noite. Algo enorme se levanta da lama.",
       "scene": "ruins",
       "boss": "O Colosso Afogado",
-      "image": "catalog-38.webp"
+      "image": "banner_raid_ruins.webp"
     }
   ]
 }
