@@ -5,20 +5,19 @@ import DiscordShot from './DiscordShot.astro';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const steps = [
-  { n: 1, name: 'board', system: false },
-  { n: 2, name: 'warning', system: true },
-  { n: 3, name: 'choice', system: false },
-  { n: 4, name: 'cleared', system: false },
+  { n: 1, name: 'board' },
+  { n: 2, name: 'fight' },
+  { n: 3, name: 'choice' },
+  { n: 4, name: 'cleared' },
 ] as const;
 ---
 <section class="run" id="run"><div class="wrap run-grid">
   <h2 class="sr-only">{t(locale, 'run.heading')}</h2>
   <div class="steps">
-    {steps.map(({ n, name, system }) => (
+    {steps.map(({ n, name }) => (
       <div class="step" data-step={n}>
         <h3>{t(locale, `run.${n}.title`)}</h3>
         <p>{t(locale, `run.${n}.body`)}</p>
-        {system && <p class="sysline">{t(locale, 'run.2.system')}</p>}
         <div class="shot"><DiscordShot locale={locale} name={name} alt={t(locale, `alt.shot.${name}`)} enlarge={t(locale, 'run.enlarge')} /></div>
       </div>
     ))}
@@ -54,7 +53,6 @@ const steps = [
   .step{min-height:92vh;display:flex;flex-direction:column;justify-content:center}
   .step h3{font:800 clamp(34px,4.4vw,54px)/1 var(--display)}
   .step p{color:var(--ash);font-size:20px;max-width:36ch;margin-top:14px}
-  .step p.sysline{font:16px/1.6 var(--sys);color:var(--ice)}
   .stage{display:none;position:sticky;top:12vh;height:76vh;place-items:center}
   .stage-shot{grid-area:1/1;width:100%;max-width:560px;opacity:0;transform:translateY(16px) scale(.98);transition:opacity .45s,transform .45s}
   .stage[data-step="1"] .stage-shot[data-n="1"],.stage[data-step="2"] .stage-shot[data-n="2"],.stage[data-step="3"] .stage-shot[data-n="3"],.stage[data-step="4"] .stage-shot[data-n="4"]{opacity:1;transform:none}
